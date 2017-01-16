@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/stu_news_time"
+        android:gravity="center"
+        android:background="@color/encode_view"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/textView71"
+        android:layout_height="2dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/stu_news_content"
+        android:layout_height="60dp"
+        android:background="@color/encode_view"
+        android:gravity="center"
+        android:textAlignment="viewStart" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+</LinearLayout>

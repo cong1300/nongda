@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_class_list_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinnuo.apple.nongda.TeacherActivity.CourseAttendance.ClassListDetailsActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="请选择教师"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:background="@drawable/textview_border"
+            android:id="@+id/lesson_teacher"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="请选择班级"
+            android:layout_width="match_parent"
+            android:id="@+id/lesson_class"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="生成二维码"
+            android:layout_width="match_parent"
+            android:id="@+id/lesson_QRcode"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="开启定位签到"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@drawable/textview_border"
+            android:id="@+id/lesson_opening_positioning"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="关闭定位签到"
+            android:layout_width="match_parent"
+            android:background="@drawable/textview_border"
+            android:id="@+id/lesson_close_location"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+    </LinearLayout>
+</RelativeLayout>

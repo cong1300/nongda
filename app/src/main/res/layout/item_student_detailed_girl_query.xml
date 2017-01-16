@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="姓 名："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed55"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="17sp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed56"
+            android:layout_weight="1"
+            android:textSize="17sp"
+            android:textAlignment="textStart" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1" />
+
+        <TextView
+            android:text="编 号："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed57"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="17sp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed58"
+            android:layout_weight="1.2"
+            android:textSize="17sp"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="性 别："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed51"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="17sp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed52"
+            android:layout_weight="1"
+            android:textSize="17sp"
+            android:textAlignment="textStart" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1" />
+
+        <TextView
+            android:text="年 级："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed53"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="17sp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed54"
+            android:layout_weight="1.2"
+            android:textSize="17sp"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="序 号"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed1"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="项目名称"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed2"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="测试成绩"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed3"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="分 数"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed4"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="结 论"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed5"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed6"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="身高测量"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed7"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed8"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed9"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed10"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed11"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="体重测量(cm)"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed12"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed13"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed14"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed15"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed16"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="肺活量"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed17"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed18"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed19"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed20"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="4"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed21"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="立定跳远(cm)"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed22"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed23"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed24"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed25"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed26"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="引体向上"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed27"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed28"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed29"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed30"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed31"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="坐体前屈(cm)"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed32"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed33"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed34"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed35"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed36"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="50米(秒)"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed37"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed38"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed39"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed40"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="8"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed41"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="1000米"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed42"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed43"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed44"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed45"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed46"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="引体向上加分"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed47"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed48"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed49"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed50"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="10"
+            android:layout_width="0dp"
+            android:id="@+id/detailed59"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:text="1000米加分"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed60"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed61"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed62"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed63"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed64"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="总  结"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed65"
+            android:gravity="center"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/detailed66"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed67"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/detailed68"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

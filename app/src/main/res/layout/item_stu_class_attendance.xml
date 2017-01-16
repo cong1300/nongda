@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/encode_view">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+       >
+
+        <TextView
+            android:text="  课 程:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/textView34"
+            android:layout_weight="1.5"
+            android:textColor="@color/contents_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/attendance_curriculum"
+            android:layout_weight="7"
+            android:textAlignment="textStart"
+            android:textColor="@color/contents_text"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="  教 师:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView38"
+            android:gravity="center"
+            android:layout_weight="1.5"
+            android:textColor="@color/contents_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/attendance_teacherName"
+            android:layout_weight="7"
+            android:textAlignment="textStart"
+            android:textColor="@color/contents_text"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="  签 到>"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/textView40"
+            android:layout_weight="1.5"
+            android:textColor="@color/contents_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/textView39"
+            android:layout_weight="7"
+            android:textStyle="normal|bold"
+            android:textAlignment="textStart" />
+
+    </LinearLayout>
+</LinearLayout>

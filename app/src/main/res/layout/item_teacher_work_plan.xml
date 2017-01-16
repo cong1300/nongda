@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="标  题:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_fourborder"
+            android:id="@+id/textView70"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/work_title"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:background="@color/encode_view"
+            android:textAlignment="viewStart"
+            android:textColor="@color/contents_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="创建日期:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView73"
+            android:layout_weight="2"
+            android:background="@drawable/textview_fourborder"
+            android:gravity="center"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/work_createdate"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:background="@color/encode_view"
+            android:textAlignment="viewStart"
+            android:textColor="@color/contents_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="开始日期:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView75"
+            android:background="@drawable/textview_fourborder"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/work_startdate"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:background="@color/encode_view"
+            android:textAlignment="viewStart"
+            android:textColor="@color/contents_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="结束日期:"
+            android:layout_width="0dp"
+            android:background="@drawable/textview_fourborder"
+            android:layout_height="match_parent"
+            android:id="@+id/textView77"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/work_enddate"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:background="@color/encode_view"
+            android:textAlignment="viewStart"
+            android:textColor="@color/contents_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="计  划:"
+            android:layout_width="0dp"
+            android:background="@drawable/textview_fourborder"
+            android:layout_height="match_parent"
+            android:id="@+id/textView79"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/work_plan"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:background="@color/encode_view"
+            android:textAlignment="viewStart"
+            android:textColor="@color/contents_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="是否完成:"
+            android:layout_width="0dp"
+            android:background="@drawable/textview_fourborder"
+            android:layout_height="match_parent"
+            android:id="@+id/textView81"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/work_yesno"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:background="@color/encode_view"
+            android:textAlignment="viewStart"
+            android:textColor="@color/contents_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="总  结:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_fourborder"
+            android:id="@+id/textView83"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/work_summary"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:background="@color/encode_view"
+            android:textAlignment="viewStart"
+            android:textColor="@color/contents_text" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="班级名称："
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/textView8"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/textview_fourborder"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/teacher_class"
+            android:layout_weight="10"
+            android:gravity="center"
+            android:textAlignment="textStart"
+            android:background="@color/encode_view"/>
+    </LinearLayout>
+
+</LinearLayout>

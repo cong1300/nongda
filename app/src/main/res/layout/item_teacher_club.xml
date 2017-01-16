@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  班级编号："
+            android:layout_width="wrap_content"
+            android:id="@+id/teacher_club1"
+            android:layout_weight="0.17"
+            android:background="@drawable/textview_bottom"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club2"
+            android:layout_weight="1"
+            android:background="@drawable/textview_bottom"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  班级名称："
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club3"
+            android:layout_weight="0.17"
+            android:background="@drawable/textview_bottom"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club4"
+            android:layout_weight="1"
+            android:background="@drawable/textview_bottom"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  教师：        "
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club5"
+            android:layout_weight="0.17"
+            android:background="@drawable/textview_bottom"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club6"
+            android:layout_weight="1"
+            android:background="@drawable/textview_bottom"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  学生数：    "
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club7"
+            android:layout_weight="0.17"
+            android:background="@drawable/textview_bottom"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club8"
+            android:layout_weight="1"
+            android:background="@drawable/textview_bottom"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  上课地点："
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club9"
+            android:layout_weight="0.17"
+            android:background="@drawable/textview_bottom"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club10"
+            android:layout_weight="1"
+            android:background="@drawable/textview_bottom"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  上课日期："
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club11"
+            android:layout_weight="0.17"
+            android:background="@drawable/textview_bottom"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club12"
+            android:layout_weight="1"
+            android:background="@drawable/textview_bottom"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  上课时间："
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club13"
+            android:layout_weight="0.17"
+            android:background="@drawable/textview_bottom"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/teacher_club14"
+            android:layout_weight="1"
+            android:background="@drawable/textview_bottom"/>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+</LinearLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_class_list_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinnuo.apple.nongda.TeacherActivity.CourseAttendance.ClassListDetailsActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            android:id="@+id/layout_effect">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView56"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="刷新位置"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/refresh_position"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textColor="@color/encode_view" />
+        </LinearLayout>
+
+        <TextView
+            android:text="扫码签到"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:background="@drawable/textview_border"
+            android:id="@+id/scan_code_sign"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="开启定位"
+            android:layout_width="match_parent"
+            android:id="@+id/opening_positioning"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="关闭定位"
+            android:layout_width="match_parent"
+            android:id="@+id/close_location"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="考勤列表"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:background="@drawable/textview_border"
+            android:id="@+id/Attendance_list"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="合课"
+            android:layout_width="match_parent"
+            android:background="@drawable/textview_border"
+            android:id="@+id/combined_lesson"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="课程开始"
+            android:layout_width="match_parent"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:id="@+id/course_start"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="课程结束"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:background="@drawable/textview_border"
+            android:id="@+id/end_of_course"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            android:id="@+id/end">
+
+            <com.xinnuo.apple.nongda.Anticlockwise
+                android:id="@+id/id_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="66sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

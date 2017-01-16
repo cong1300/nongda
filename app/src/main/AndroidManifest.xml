@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xinnuo.apple.nongda">
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="22" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+    <!-- Normal Permissions 不需要运行时注册 -->
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
+    <!-- 请求网络 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 不是SDK需要的权限，是示例中的后台唤醒定位需要的权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- 需要运行时注册的权限 -->
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 读取缓存数据 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 更改设置 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".studentActivity.TeacherShow.ImageLoaderApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b9aa84b9b0c58a8dfd8724b714bec4a8" />
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" /> <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.hdl.jpushdemo" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".zxing.android.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".Location_Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".studentActivity.StudentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Binding.StudentBindingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.TeacherActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Binding.TeacherBindingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.club.TeacherClubActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.club.StudentListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.AttendanceDataStatistics.AttendanceDataStatisticsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Resultquery.ResultQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Resultquery.TeacherClassQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Resultquery.StudentListQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Resultquery.StudentDetailedQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Resultquery.PhysicalFitnessTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Meeting.MeetingInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Meeting.MeetingInfoDetailedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Meeting.ConferenceListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Meeting.MeetingLeaveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.AccountSettings.AccountSettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.AccountSettings.ModifyPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studentActivity.AccountSettings.StuAccountSettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studentActivity.AccountSettings.StuModifyPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Substitute.SubstituteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Substitute.TeacherSubstituteAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeacherActivity.Substitute.QueryAllTheeachersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studentActivity.StudentResultQuery.StudentResultQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studentActivity.StudentResultQuery.PhysicalPerformanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studentActivity.StudentResultQuery.StuAttendanceRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".studentActivity.StudentResultQuery.SignInTimeActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".studentActivity.ClassAttendance.StuClassAttendanceActivity" />
+        <activity android:name=".RetrievePasswordActivity" />
+        <activity android:name=".TeacherActivity.CourseAttendance.Class_ListActivity" />
+        <activity android:name=".TeacherActivity.CourseAttendance.ClassListDetailsActivity" />
+        <activity android:name=".TeacherActivity.CourseAttendance.TeacherAttendanceListActivity" />
+        <activity android:name=".TeacherActivity.CourseAttendance.TeacherMakeQRActivity" />
+        <activity android:name=".TeacherActivity.CourseAttendance.CombinedLessonActivity" />
+        <activity android:name=".TeacherActivity.CourseAttendance.AllTeachersActivity" />
+        <activity android:name=".TeacherActivity.CourseAttendance.ClassListActivity" />
+        <activity android:name=".TeacherActivity.CourseAttendance.SubstituteCourseActivity" />
+        <activity android:name=".studentActivity.StuClub.StuClubActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity
+            android:name=".studentActivity.TeacherShow.TeacherShowActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".studentActivity.CampusDynamics.StuCampusDynamics" />
+        <activity android:name=".studentActivity.TeacherShow.TeacherShowInfoActivity" />
+        <activity android:name=".studentActivity.CampusDynamics.StuCampusDynamicsInfo" />
+        <activity android:name=".studentActivity.News.StuNews" />
+        <activity android:name=".studentActivity.News.MessageDetails" />
+        <activity android:name=".studentActivity.TeacherShow.TeacherShowInfoActivity" />
+        <activity android:name=".TeacherActivity.WorkPlan.TeacherWorkPlan" />
+        <activity android:name=".TeacherActivity.WorkPlan.TeacherUpdateWorkPlan" />
+        <activity android:name=".studentActivity.OutDoorSports.OutDoorSportsActivity" />
+        <activity android:name=".studentActivity.OutDoorSports.SportActivity" />
+        <activity android:name=".studentActivity.OutDoorSports.SportRecordsActivity"></activity>
+        <activity android:name=".TeacherActivity.WorkPlan.TeacherUpdateWorkPlan" />
+        <activity android:name=".TeacherActivity.WorkPlan.TeacherAddWorkPlan" />
+        <activity android:name=".TeacherActivity.SportsStandards.SportsStandards"></activity>
+    </application>
+
+</manifest>

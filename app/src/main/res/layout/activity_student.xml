@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_student"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.xinnuo.apple.nongda.TeacherActivity.TeacherActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/encode_view">
+
+            <TextView
+                android:text="姓 名"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/textView6"
+                android:background="@color/encode_view"
+                android:textSize="20sp"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@color/gray"
+                android:id="@+id/student_name"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textStyle="normal|bold"
+                android:textSize="20sp"
+                android:textAlignment="textStart" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@color/encode_view"
+            android:layout_height="55dp">
+
+            <TextView
+                android:text="账 号"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:id="@+id/AccountNumber"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:background="@color/encode_view"
+                android:textStyle="normal|bold"
+                android:textSize="20sp" />
+
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/gray"
+                android:id="@+id/account_number"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textStyle="normal|bold"
+                android:textSize="20sp"
+                android:textAlignment="textStart" />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/loading_dialog" >
+
+                <TextView
+                    android:text="俱乐部"
+                    android:layout_width="0dp"
+                    android:id="@+id/student_club"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:text="校园动态"
+                    android:layout_width="0dp"
+                    android:id="@+id/student_CampusDynamics"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="教师风采"
+                    android:layout_width="0dp"
+                    android:id="@+id/student_teachers"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:text="在线考试"
+                    android:layout_width="0dp"
+                    android:id="@+id/student_OnlineTest"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="上课签到"
+                    android:layout_width="0dp"
+                    android:id="@+id/student_ClassAttendance"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:text="教师评价"
+                    android:layout_width="0dp"
+                    android:id="@+id/student_TeacherEvaluation"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="成绩查询"
+                    android:layout_width="0dp"
+                    android:id="@+id/student_ResultQuery"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:text="账号设置"
+                    android:layout_width="0dp"
+                    android:id="@+id/student_setup"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:text="户外考勤"
+                    android:id="@+id/student_outdoors"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_width="0dp"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textSize="18sp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1">
+
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/encode_view">
+
+                        <TextView
+                            android:text="新"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/text_circular"
+                            android:id="@+id/stu_spase1"
+                            android:visibility="invisible"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_weight="0.5"
+                            android:textColor="@color/encode_view" />
+
+                        <TextView
+                            android:text="消息        "
+                            android:layout_height="match_parent"
+                            android:id="@+id/stu_spase"
+                            android:background="@drawable/textview_bottom"
+                            android:textAlignment="center"
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_weight="7" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+</RelativeLayout>

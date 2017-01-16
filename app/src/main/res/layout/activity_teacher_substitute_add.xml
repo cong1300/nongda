@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_teacher_substitute_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.xinnuo.apple.nongda.TeacherActivity.Substitute.TeacherSubstituteAddActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="  原 因："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView15"
+                android:layout_weight="0.5"
+                android:textAlignment="center" />
+            <EditText
+                android:id="@+id/substitute_reason"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:gravity="top"
+                android:hint="请填写原因(不少于5个字)"
+                android:inputType="textMultiLine"
+                android:minLines="10"
+                android:maxLines="15"
+                android:layout_weight="20"
+                android:scrollbars="vertical"
+                android:background="@android:drawable/edit_text"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <RadioGroup
+                android:id="@+id/substitute_add"
+                android:layout_width="0dp"
+                android:layout_weight="6.5"
+                android:layout_height="wrap_content"
+                 >
+
+                <RadioButton
+                    android:text="代课申请"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/substitute_for"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimary" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="合课申请"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/class_application"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimary" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="选择代课教师[请先选择教师]"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/substitute_teacher"
+                android:layout_weight="6.5"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="提交"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/substitute_button"
+                android:background="@color/colorPrimary"
+                android:layout_weight="1"
+                android:textColor="@color/encode_view" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

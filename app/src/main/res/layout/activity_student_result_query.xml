@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_result_query"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinnuo.apple.nongda.TeacherActivity.Resultquery.ResultQueryActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  签到记录查询"
+                android:layout_width="0dp"
+                android:id="@+id/student_query1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:layout_weight="8" />
+
+            <TextView
+                android:text="》"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/greaterthan1"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textStyle="normal|bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  体质测试成绩查询"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/student_query2"
+                android:gravity="center"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:layout_weight="8" />
+            <TextView
+                android:text="》"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/greaterthan2"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textStyle="normal|bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  在线考试成绩查询(未开通)"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/student_query3"
+                android:gravity="center"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:layout_weight="8" />
+            <TextView
+                android:text="》"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/greaterthan3"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textStyle="normal|bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  体育成绩查询(未开通)"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:id="@+id/student_query4"
+                android:gravity="center"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:layout_weight="8" />
+            <TextView
+                android:text="》"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/greaterthan4"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textStyle="normal|bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

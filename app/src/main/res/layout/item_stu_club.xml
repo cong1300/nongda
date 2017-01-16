@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="课程:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView58"
+            android:gravity="center"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/stuclub_curriculum"
+            android:layout_weight="6"
+            android:textAlignment="viewStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="教师:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView60"
+            android:gravity="center"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/stuclub_teacher"
+            android:layout_weight="6"
+            android:textAlignment="viewStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="教室:"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/textView62"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/stuclub_classroom"
+            android:layout_weight="6"
+            android:textAlignment="viewStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="时间:"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView64"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:textAlignment="viewStart"
+            android:id="@+id/stuclub_time" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="人数:"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView66"
+            android:gravity="center"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:id="@+id/stuclub_numberof"
+            android:layout_weight="6"
+            android:layout_height="match_parent"
+            android:textAlignment="viewStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/textView68"
+            android:layout_weight="6" />
+
+        <TextView
+            android:text="申请调课"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/stuclub_transfers"
+            android:background="@color/status_text"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:textAlignment="center"
+            android:textColor="@color/encode_view" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" />
+    </LinearLayout>
+
+</LinearLayout>

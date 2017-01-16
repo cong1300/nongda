@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  姓 名："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView22"
+            android:layout_weight="1.5"
+            android:background="@drawable/textview_fourborder"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/teacher_substitute_name"
+            android:background="@color/encode_view"
+            android:layout_weight="6" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  工 号："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView25"
+            android:layout_weight="1.5"
+            android:background="@drawable/text_border"
+            />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/teacher_substitute_cardNo"
+            android:background="@color/encode_view"
+            android:layout_weight="6" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  时 间："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView27"
+            android:layout_weight="1.5"
+            android:background="@drawable/text_border"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/teacher_substitute_time"
+            android:background="@color/encode_view"
+            android:layout_weight="6" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  原 因："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView29"
+            android:layout_weight="1.5"
+            android:background="@drawable/text_border"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/encode_view"
+            android:id="@+id/teacher_substitute_reason"
+            android:layout_weight="6" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  类 别："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView31"
+            android:layout_weight="1.5"
+            android:background="@drawable/text_border"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/encode_view"
+            android:id="@+id/teacher_substitute_class"
+            android:layout_weight="6" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="  状 态："
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView33"
+            android:layout_weight="1.5"
+            android:background="@drawable/textview_fourborder"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/encode_view"
+            android:id="@+id/teacher_substitute_state"
+            android:layout_weight="6" />
+    </LinearLayout>
+</LinearLayout>

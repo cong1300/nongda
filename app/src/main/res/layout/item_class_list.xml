@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="  课程编号:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView48"
+            android:background="@drawable/textview_fourborder"
+            android:layout_weight="2"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/class_list_number"
+            android:background="@color/encode_view"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="  课程名称:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView46"
+            android:layout_weight="2"
+            android:background="@drawable/text_border"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/class_list_className"
+            android:layout_weight="6"
+            android:background="@color/encode_view"
+            android:gravity="center"
+            android:textAlignment="textStart" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="  上课时间:"
+            android:layout_width="0dp"
+            android:background="@drawable/text_border"
+            android:layout_height="match_parent"
+
+            android:id="@+id/textView50"
+            android:layout_weight="2"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/class_list_time"
+            android:layout_weight="6"
+            android:background="@color/encode_view"
+            android:gravity="center"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="  教师:"
+            android:layout_width="0dp"
+            android:background="@drawable/textview_fourborder"
+            android:layout_height="match_parent"
+            android:id="@+id/textView52"
+            android:layout_weight="2"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/class_list_teacher"
+            android:layout_weight="6"
+            android:background="@color/encode_view"
+            android:gravity="center"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+</LinearLayout>

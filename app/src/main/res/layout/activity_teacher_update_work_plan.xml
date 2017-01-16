@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_teacher_update_work_plan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinnuo.apple.nongda.TeacherActivity.WorkPlan.TeacherUpdateWorkPlan">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="30dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView74"
+                android:layout_weight="6"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="保存修改"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/save_changes"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/encode_view" />
+
+            <TextView
+                android:text="删 除"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/delete_plan"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/encode_view" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:text="标  题:"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textview_fourborder"
+                        android:id="@+id/textView90"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:textColor="@color/contents_text" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/update_work_title"
+                        android:layout_weight="6" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:text="创建日期:"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView91"
+                        android:layout_weight="2"
+                        android:background="@drawable/textview_fourborder"
+                        android:gravity="center"
+                        android:textColor="@color/contents_text" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/update_work_createdate"
+                        android:layout_weight="6" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:text="开始日期:"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView92"
+                        android:background="@drawable/textview_fourborder"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:textColor="@color/contents_text" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/update_work_startdate"
+                        android:layout_weight="6" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:text="结束日期:"
+                        android:layout_width="0dp"
+                        android:background="@drawable/textview_fourborder"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView93"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:textColor="@color/contents_text" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/update_work_enddate"
+                        android:layout_weight="6" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+
+                    <TextView
+                        android:text="计  划:"
+                        android:layout_width="0dp"
+                        android:background="@drawable/textview_fourborder"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView94"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:textColor="@color/contents_text" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:layout_weight="6"
+                        android:enabled="true"
+                        android:gravity="top"
+                        android:minLines="10"
+                        android:maxLines="15"
+                        android:scrollbars="vertical"
+                        android:id="@+id/update_work_plan"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+
+                    <TextView
+                        android:text="总  结:"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textview_fourborder"
+                        android:id="@+id/textView96"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:textColor="@color/contents_text" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:layout_weight="6"
+                        android:enabled="true"
+                        android:gravity="top"
+                        android:minLines="10"
+                        android:maxLines="15"
+                        android:scrollbars="vertical"
+                        android:id="@+id/update_work_summary"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:text="是否完成:"
+                        android:layout_width="0dp"
+                        android:background="@drawable/textview_fourborder"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView95"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:textColor="@color/contents_text" />
+
+                    <CheckBox
+                        android:text="未完成"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/workplan_no"
+                        android:layout_weight="3" />
+
+                    <CheckBox
+                        android:text="已完成"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/workplan_yes"
+                        android:layout_weight="3" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

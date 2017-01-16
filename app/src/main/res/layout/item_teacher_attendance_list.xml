@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/encode_view">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/tea_att_list_number"
+            android:textSize="12sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/tea_att_list_stunumber"
+            android:textSize="12sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/tea_att_list_name"
+            android:textSize="12sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/tea_att_list_sex"
+            android:textSize="12sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/tea_att_list_class"
+            android:textSize="12sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/tea_att_list_time"
+            android:textSize="12sp"
+            android:textColor="@color/contents_text" />
+    </LinearLayout>
+
+</LinearLayout>

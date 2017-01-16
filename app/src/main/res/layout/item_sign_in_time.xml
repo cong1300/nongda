@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="  上课签到"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/text_border"
+            android:id="@+id/textView30"
+            android:layout_weight="2" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/class_attendance"
+            android:background="@color/encode_view"
+            android:layout_weight="7"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:text="  下课签到:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/text_border"
+            android:id="@+id/textView36"
+            android:layout_weight="2" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/encode_view"
+            android:gravity="center"
+            android:id="@+id/class_attendance1"
+            android:layout_weight="7"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+</LinearLayout>

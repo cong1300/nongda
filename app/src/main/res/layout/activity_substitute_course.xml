@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_class_list_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinnuo.apple.nongda.TeacherActivity.CourseAttendance.ClassListDetailsActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            android:id="@+id/substitute_layout_effect">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView56"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="刷新位置"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/substitute_refresh_position"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textColor="@color/encode_view" />
+        </LinearLayout>
+
+        <TextView
+            android:text="请选择教师"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:background="@drawable/textview_border"
+            android:id="@+id/substitute_teacher"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="请选择班级"
+            android:layout_width="match_parent"
+            android:id="@+id/substitute_class"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="生成二维码"
+            android:layout_width="match_parent"
+            android:id="@+id/substitute_QRcode"
+            android:background="@drawable/textview_border"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="开启定位签到"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@drawable/textview_border"
+            android:id="@+id/substitute_opening_positioning"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="关闭定位签到"
+            android:layout_width="match_parent"
+            android:background="@drawable/textview_border"
+            android:id="@+id/substitute_close_location"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:textColor="@color/contents_text" />
+
+        <TextView
+            android:text="课程开始"
+            android:layout_width="match_parent"
+            android:background="@drawable/textview_border"
+            android:id="@+id/substitute_course_starts"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textColor="@color/contents_text"
+            android:layout_weight="0.01" />
+
+        <TextView
+            android:text="课程结束"
+            android:layout_width="match_parent"
+            android:background="@drawable/textview_border"
+            android:id="@+id/substitute_course_closes"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_height="45dp"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textColor="@color/contents_text" />
+
+    </LinearLayout>
+</RelativeLayout>

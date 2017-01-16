@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="  课 程:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/textview_fourborder"
+            android:id="@+id/textView28"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/result_points"
+            android:id="@+id/stu_attendance_curriculum"
+            android:layout_weight="7"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="  教 师:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/text_border"
+            android:gravity="center"
+            android:id="@+id/textView32"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:background="@color/result_points"
+            android:id="@+id/stu_attendance_teacher"
+            android:layout_weight="7"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:text="  次 数:"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_fourborder"
+            android:gravity="center"
+            android:id="@+id/textView35"
+            android:layout_weight="1.5"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/result_points"
+            android:gravity="center"
+            android:id="@+id/stu_attendance_number"
+            android:layout_weight="7"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+</LinearLayout>
