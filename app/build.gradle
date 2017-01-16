@@ -41,4 +41,5 @@ dependencies {
     // 此处以SDK 2.1.8版本为例
     compile files('libs/AMap_Location_V3.0.0_20160922.jar')
     compile files('libs/universal-image-loader-1.9.3.jar')
+    compile files('libs/GifView.jar')
 }
