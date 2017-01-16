@@ -30,37 +30,43 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class SportsStandards extends BaseActivity {
+public class SportsDetails extends BaseActivity {
+    private String id;
     private OkHttpClient client;
-    private String teacherId;
     private ListView listView;
     private JSONArray dataArr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sports_standards);
+        setContentView(R.layout.activity_sports_details);
         initOkHttp();
         Intent intent = getIntent();
-        teacherId = intent.getStringExtra("teacherId");
-        Log.d("教师Id  = ",teacherId);
-        requestWithUserId();
-        listView= (ListView)findViewById(R.id.list_sport_standards);
+        id = intent.getStringExtra("id");
+        listView= (ListView)findViewById(R.id.list_sport_details);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long is) {
                 try {
                     //点击相应的班级进行跳转
-                    Intent intent=new Intent(SportsStandards.this,SportsDetails.class);
+                    Intent intent=new Intent(SportsDetails.this,Sport_Class.class);
                     JSONObject js = dataArr.getJSONObject(position);
                     //传值 班级id 所教班级id
-                    intent.putExtra("id",js.getString("id"));
+                    intent.putExtra("id",id);
+                    intent.putExtra("sportkindSex",js.getString("sportkindSex"));
+                    intent.putExtra("sportkindName",js.getString("sportkindName"));
+                    String status = position+1+"";
+                    intent.putExtra("status",status);
                     startActivity(intent);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
+    }
+    public void onStart(){
+        super.onStart();
+        requestWithUserId();
     }
     /**
      * 请求方法
@@ -69,10 +75,9 @@ public class SportsStandards extends BaseActivity {
         //菊花的开始方法
         mLoading.show();
         RequestBody requestBodyPost = new FormBody.Builder()
-                .add("id",teacherId)
                 .build();
         Request requestPost = new Request.Builder()
-                .url(httpUrl.teacherClubUrl)
+                .url(httpUrl.SportsDetails)
                 .post(requestBodyPost)
                 .build();
         client.newCall(requestPost).enqueue(new Callback() {
@@ -112,59 +117,30 @@ public class SportsStandards extends BaseActivity {
     private  void jsonParseWithJsonStr (String jsonStr) throws JSONException {
 
         JSONArray jsArr = new JSONArray(jsonStr);
-
+        dataArr = jsArr;
         List<String> data = new ArrayList<String>();
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
         for (int i = 0; i < jsArr.length(); i++) {
             JSONObject jss = jsArr.getJSONObject(i);
-            JSONArray jsarr = jss.getJSONArray("classList");
-            dataArr = jsarr;
-            for (int j = 0; j < jsarr.length(); j++)
-            {
-                JSONObject js = jsarr.getJSONObject(j);
+             String sportkindName = jss.getString("sportkindName");
+             String sportkindSex = jss.optString("sportkindSex");
 
-            /*
-            * "startTime": "3,4节",
-                "id": 159,
-                "sex": "全",
-                "gradeId": "二年级",
-                "factAmount": 30,
-                "classDate": "周五",
-                "sportsClassNo": "0101",
-                "ratingAmount": 18,
-                "sportsClassName": "健身健美",
-                "teacherName": "王大为",
-                "schoolDistrictId": "健身馆",
-                "teacherId": 19
-                */
-                String sportsClassNo = js.getString("sportsClassNo");
-                String className = js.optString("sportsClassName");
-                String teacherName = js.optString("teacherName");
-                String factAmount = js.optString("factAmount");
-                String schoolDistrictId = js.optString("schoolDistrictId");
-                String classDate = js.optString("classDate");
-                String startTime = js.optString("startTime");
-                Log.d("******",className);
-                HashMap<String, Object> map = new HashMap<String, Object>();
-//            map.put("id",id);
-                map.put("sportsClassNo",sportsClassNo);
-                map.put("className",className);
-                map.put("teacherName",teacherName);
-                map.put("factAmount",factAmount);
-                map.put("schoolDistrictId",schoolDistrictId);
-                map.put("classDate",classDate);
-                map.put("startTime",startTime);
+             HashMap<String, Object> map = new HashMap<String, Object>();
+//          ap.put("id",id);
+             map.put("sportkindName",sportkindName);
+             map.put("sportkindSex",sportkindSex);
 
-                listItem.add(map);
-            }
+
+             listItem.add(map);
+
         }
         if (jsArr.length() == 0)
         {
             midToast("无数据",3);
         }
-        SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem, R.layout.item_teacher_club,
-                new  String[]{"sportsClassNo","className","teacherName","factAmount","schoolDistrictId","classDate","startTime"},
-                new int[]{R.id.teacher_club2, R.id.teacher_club4, R.id.teacher_club6, R.id.teacher_club8, R.id.teacher_club10, R.id.teacher_club12, R.id.teacher_club14});
+        SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem, R.layout.item_sports_details,
+                new  String[]{"sportkindName","sportkindSex"},
+                new int[]{R.id.sport_detail1, R.id.sport_detail2});
         listView.setAdapter(qrAdapter);
 
     }

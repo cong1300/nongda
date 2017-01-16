@@ -14,6 +14,7 @@ import com.xinnuo.apple.nongda.TeacherActivity.AttendanceDataStatistics.Attendan
 import com.xinnuo.apple.nongda.TeacherActivity.CourseAttendance.Class_ListActivity;
 import com.xinnuo.apple.nongda.TeacherActivity.Meeting.MeetingInfoActivity;
 import com.xinnuo.apple.nongda.TeacherActivity.Resultquery.ResultQueryActivity;
+import com.xinnuo.apple.nongda.TeacherActivity.SportsStandards.SportsStandards;
 import com.xinnuo.apple.nongda.TeacherActivity.Substitute.SubstituteActivity;
 import com.xinnuo.apple.nongda.TeacherActivity.WorkPlan.TeacherWorkPlan;
 import com.xinnuo.apple.nongda.TeacherActivity.club.TeacherClubActivity;
@@ -190,7 +191,9 @@ public class TeacherActivity extends BaseActivity {
         teacher_outdoors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(TeacherActivity.this, SportsStandards.class);
+                intent.putExtra("teacherId",teacherId);
+                startActivity(intent);
             }
         });
         //消息

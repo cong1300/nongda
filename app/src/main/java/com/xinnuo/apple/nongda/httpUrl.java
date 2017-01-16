@@ -118,5 +118,8 @@ public  class httpUrl {
     public static final String DeleteWorkPlan = url + "workplanAction_delWorkplan.action";
     //AddWorkPlan 新增工作计划
     public static final String AddWorkPlan = url + "workplanAction_addWorkplan.action";
-    //0y
+    //sportsdetails 运动详细
+    public static final String SportsDetails = url + "iosAppTeacherInfo_QueryPhysicalMeasurementIsTheProject.action";
+    //SportsScore 运动得分
+    public static final String SportsScore = url + "iosAppTeacherInfo_SingleAddPhysicalFitnessTest.action";
  }

@@ -203,10 +203,13 @@
         <activity android:name=".TeacherActivity.WorkPlan.TeacherUpdateWorkPlan" />
         <activity android:name=".studentActivity.OutDoorSports.OutDoorSportsActivity" />
         <activity android:name=".studentActivity.OutDoorSports.SportActivity" />
-        <activity android:name=".studentActivity.OutDoorSports.SportRecordsActivity"></activity>
+        <activity android:name=".studentActivity.OutDoorSports.SportRecordsActivity" />
         <activity android:name=".TeacherActivity.WorkPlan.TeacherUpdateWorkPlan" />
         <activity android:name=".TeacherActivity.WorkPlan.TeacherAddWorkPlan" />
-        <activity android:name=".TeacherActivity.SportsStandards.SportsStandards"></activity>
+        <activity android:name=".TeacherActivity.SportsStandards.SportsStandards" />
+        <activity android:name=".TeacherActivity.SportsStandards.SportsDetails" />
+        <activity android:name=".TeacherActivity.SportsStandards.Sport_Class" />
+        <activity android:name=".TeacherActivity.SportsStandards.SportsScore"></activity>
     </application>
 
 </manifest>
