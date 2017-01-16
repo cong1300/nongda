@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.xinnuo.apple.nongda.R;
@@ -36,7 +37,7 @@ import okhttp3.Response;
 public class SportRecordsActivity extends AppCompatActivity {
 
     private OkHttpClient client;
-    private ArrayList <Map>list = new ArrayList();
+    ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
     private ListView listView;
 
     @Override
@@ -45,6 +46,7 @@ public class SportRecordsActivity extends AppCompatActivity {
         Log.d("1", "111111");
 
         setContentView(R.layout.activity_sport_records);
+        listView = (ListView)findViewById(R.id.list_sport_record);
         Intent intent = getIntent();
         String studentId = intent.getStringExtra("studentId");
         initOkHttp();
@@ -114,13 +116,19 @@ public class SportRecordsActivity extends AppCompatActivity {
                 JSONObject jsObj = jsonArr.getJSONObject(i);
                 String exerciseDate = jsObj.getString("exerciseDate");
                 String step = jsObj.getString("step");
-                Map map = new HashMap();
+                HashMap<String, Object> map = new HashMap<String, Object>();
                 map.put("exerciseDate", exerciseDate);
-                map.put("step", step);
+                map.put("step","运动量:"+step);
                 list.add(map);
             }
 
-            listView.setAdapter(new ItemListAdapter());
+//            listView.setAdapter(new ItemListAdapter());
+
+            SimpleAdapter qrAdapter = new SimpleAdapter(this,list,R.layout.item_sport_records,
+                    new  String[]{"exerciseDate","step"},
+                    new int[]{R.id.tv_sport_records_time,R.id.tv_sport_records_score});
+            listView.setAdapter(qrAdapter);
+            qrAdapter.notifyDataSetChanged();
 
         } catch (JSONException e) {
             e.printStackTrace();

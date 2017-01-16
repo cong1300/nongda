@@ -10,4 +10,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.xinnuo.apple.nongda.studentActivity.OutDoorSports.SportRecordsActivity">
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/list_sport_record" />
 </RelativeLayout>
