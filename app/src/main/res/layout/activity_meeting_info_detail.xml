@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_meeting_info_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinnuo.apple.nongda.Admin.Meeting.MeetingInfoDetailActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView13"
+                android:layout_weight="2" />
+
+            <TextView
+                android:text="删除会议"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/meet_leave"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/encode_view"
+                android:textSize="18sp" />
+
+            <Space android:layout_height="30dp"
+                android:layout_width="3dp" />
+
+            <TextView
+                android:text="签到名单"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/meet_sign"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/encode_view"
+                android:textSize="18sp" />
+
+            <Space android:layout_height="30dp"
+                android:layout_width="3dp" />
+
+            <TextView
+                android:text="发起签到"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/meet_conferencelist"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/encode_view"
+                android:textSize="18sp" />
+
+            <Space android:layout_height="30dp"
+                android:layout_width="3dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="  发布时间："
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:background="@drawable/textview_fourborder"
+                android:id="@+id/textView9"
+                android:gravity="center"
+                android:layout_weight="2.5" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:background="@drawable/textview_four_boders"
+                android:id="@+id/admin_meeting_info1"
+                android:gravity="center"
+                android:layout_weight="8"
+                android:textAlignment="textStart" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="  状  态:"
+                android:layout_width="0dp"
+                android:id="@+id/textView12"
+                android:background="@drawable/textview_fourborder"
+                android:gravity="center"
+                android:layout_weight="2.5"
+                android:layout_height="25dp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:id="@+id/admin_meeting_info2"
+                android:background="@drawable/textview_four_boders"
+                android:layout_weight="8"
+                android:textAlignment="textStart" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="  发布者:"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:id="@+id/textView14"
+                android:background="@drawable/textview_fourborder"
+                android:gravity="center"
+                android:layout_weight="2.5"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:background="@drawable/textview_four_boders"
+                android:id="@+id/admin_meeting_info3"
+                android:layout_weight="8"
+                android:textAlignment="textStart" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="  主  题:"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:id="@+id/textView18"
+                android:background="@drawable/textview_fourborder"
+                android:gravity="center"
+                android:layout_weight="2.5"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:background="@drawable/textview_four_boders"
+                android:id="@+id/admin_meeting_info4"
+                android:layout_weight="8"
+                android:textAlignment="textStart" />
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="  开始时间:"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:id="@+id/textView21"
+                android:background="@drawable/textview_fourborder"
+                android:gravity="center"
+                android:layout_weight="2.5"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:background="@drawable/textview_four_boders"
+                android:id="@+id/admin_meeting_info5"
+                android:layout_weight="8"
+                android:textAlignment="textStart" />
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="  地  点:"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:id="@+id/textView23"
+                android:background="@drawable/textview_fourborder"
+                android:gravity="center"
+                android:layout_weight="2.5"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:background="@drawable/textview_four_boders"
+                android:id="@+id/admin_meeting_info6"
+                android:layout_weight="8"
+                android:textAlignment="textStart" />
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="  简 介:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView17"
+                android:background="@drawable/textview_fourborder"
+                android:gravity="center"
+                android:layout_weight="2.5"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/textview_four_boders"
+                android:id="@+id/admin_meeting_info7"
+                android:layout_weight="8"
+                android:textAlignment="textStart" />
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+    </LinearLayout>
+
+</RelativeLayout>

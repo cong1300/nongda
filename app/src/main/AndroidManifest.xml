@@ -209,7 +209,21 @@
         <activity android:name=".TeacherActivity.SportsStandards.SportsStandards" />
         <activity android:name=".TeacherActivity.SportsStandards.SportsDetails" />
         <activity android:name=".TeacherActivity.SportsStandards.Sport_Class" />
-        <activity android:name=".TeacherActivity.SportsStandards.SportsScore"></activity>
+        <activity android:name=".TeacherActivity.SportsStandards.SportsScore" />
+        <activity android:name=".Admin.AdminActivity" />
+        <activity android:name=".Admin.Club.AdminClub" />
+        <activity android:name=".Admin.Club.AdminTeacherClassActivity" />
+        <activity android:name=".Admin.AttendanceData.AttendanceDataActivity" />
+        <activity android:name=".Admin.ResultQuery.AdminResultQueryActivity" />
+        <activity android:name=".Admin.Substitute.AdminSubstituteActivity" />
+        <activity android:name=".Admin.News.AdminNewsActivity" />
+        <activity android:name=".Admin.News.ReleaseMessageActivity" />
+        <activity android:name=".Admin.Meeting.AdminMeetingInfoActivity" />
+        <activity android:name=".Admin.Meeting.AdministrationActivity" />
+        <activity android:name=".Admin.Meeting.NewReleaseActivity" />
+        <activity android:name=".Admin.Meeting.AdminQueryAllteacherActivity" />
+        <activity android:name=".Admin.Meeting.MeetingInfoDetailActivity" />
+        <activity android:name=".Admin.Meeting.AdminAttendanceListActivity"></activity>
     </application>
 
 </manifest>

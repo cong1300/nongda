@@ -122,4 +122,18 @@ public  class httpUrl {
     public static final String SportsDetails = url + "iosAppTeacherInfo_QueryPhysicalMeasurementIsTheProject.action";
     //SportsScore 运动得分
     public static final String SportsScore = url + "iosAppTeacherInfo_SingleAddPhysicalFitnessTest.action";
+    //AdminInfo 管理员查询代课合课详情
+    public static final String AdminInfo = url + "iosSubstitute_QueryAllTheTeachersInformations.action";
+    //AdminYes 管理员同意
+    public static final String AdminYes = url + "iosSubstitute_getAgreeSub.action";
+    //AdminNo 管理员拒绝
+    public static final String AdminNo = url + "iosSubstitute_getCancelSub.action";
+    //AdminReleaseMessage 管理员发布消息
+    public static final String AdminReleaseMessage = url + "iosAppTeacherInfo_administratorMessage.action";
+    //DeleteMeeting 删除会议
+    public static final String DeleteMeeting = url + "meetingInfoAction_deleteMeeting.action";
+    //AddMeeting 增加会议
+    public static final String AddMeeting = url + "meetingInfoAction_addMeetings.action";
+    //MeetingOpenSignIn 开启会议签到
+    public static final String MeetingOpenSignIn = url + "meetingInfoAction_OpenClosedMeetingSignIn.action";
  }
