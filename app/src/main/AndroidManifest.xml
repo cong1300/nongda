@@ -223,7 +223,10 @@
         <activity android:name=".Admin.Meeting.NewReleaseActivity" />
         <activity android:name=".Admin.Meeting.AdminQueryAllteacherActivity" />
         <activity android:name=".Admin.Meeting.MeetingInfoDetailActivity" />
-        <activity android:name=".Admin.Meeting.AdminAttendanceListActivity"></activity>
+        <activity android:name=".Admin.Meeting.AdminAttendanceListActivity" />
+        <activity android:name=".studentActivity.TeacherEvaluation.TeacherEvaluationActivity" />
+        <activity android:name=".studentActivity.TeacherEvaluation.TeacherScoreActivity" />
+        <activity android:name=".studentActivity.StudentResultQuery.SportsPerformanceQueryActivity"></activity>
     </application>
 
 </manifest>

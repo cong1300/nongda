@@ -71,7 +71,9 @@ public class StudentResultQueryActivity extends AppCompatActivity {
         student_query4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(StudentResultQueryActivity.this,SportsPerformanceQueryActivity.class);
+                intent.putExtra("id",id);
+                startActivity(intent);
             }
         });
     }

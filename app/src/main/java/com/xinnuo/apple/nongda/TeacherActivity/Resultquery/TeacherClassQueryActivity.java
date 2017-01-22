@@ -64,7 +64,15 @@ public class TeacherClassQueryActivity extends BaseActivity {
                         intent.putExtra("itemId",itemId);
                         intent.putExtra("state",state);
                         startActivity(intent);
-                    }else{
+                    }else if(state.equals("1")){
+                        Intent intent=new Intent(TeacherClassQueryActivity.this,StudentListQueryActivity.class);
+                        JSONObject js = dataArr.getJSONObject(position);
+                        //传值 班级id 所教班级id
+                        intent.putExtra("id",js.getString("id"));
+                        intent.putExtra("itemId",itemId);
+                        intent.putExtra("state",state);
+                        startActivity(intent);
+                    }else if(state.equals("4")){
                         Intent intent=new Intent(TeacherClassQueryActivity.this,StudentListQueryActivity.class);
                         JSONObject js = dataArr.getJSONObject(position);
                         //传值 班级id 所教班级id

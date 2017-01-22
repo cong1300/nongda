@@ -136,4 +136,10 @@ public  class httpUrl {
     public static final String AddMeeting = url + "meetingInfoAction_addMeetings.action";
     //MeetingOpenSignIn 开启会议签到
     public static final String MeetingOpenSignIn = url + "meetingInfoAction_OpenClosedMeetingSignIn.action";
+    //TeacherEvaluation 教师评价
+    public static final String TeacherEvaluation = url + "iosAppStudentInfo_teacherEvaluation.action";
+    //AddTeacherEvaluation  新增教师评价
+    public static final String AddTeacherEvaluation = url + "iosAppStudentInfo_addTeacherEvaluation.action";
+    // SportsPerformanceQuery 学生体育查询
+    public static final String SportsPerformanceQuery = url + "iosAppStudentInfo_sportsScoresQuery.action";
  }
