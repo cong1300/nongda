@@ -1,7 +1,9 @@
 package com.xinnuo.apple.nongda.TeacherActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -62,13 +64,14 @@ public class TeacherActivity extends BaseActivity {
     private String teacherName;
     private String itemId;
     private final static String FILE_NAME = "xth.txt"; // 设置文件的名称
+    private String spDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher);
         setTitle("SCHOOLAPP（教师版）");
-        initOkHttp();
-        //接收登录界面传过来的教师id 教师姓名 教师所教课程
+         //接收登录界面传过来的教师id 教师姓名 教师所教课程
         Intent intent = getIntent();
         teacherId = intent.getStringExtra("teacherId");
         teacherName = intent.getStringExtra("teacherName");
@@ -78,7 +81,11 @@ public class TeacherActivity extends BaseActivity {
         boundControl();
         assignBtnAction();
         teacher_name.setText(teacherName);
-        scanCodeSign();
+     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        findNewMsg();
     }
     /**
      * 绑定控件
@@ -200,6 +207,11 @@ public class TeacherActivity extends BaseActivity {
         teacher_spase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences preferences=getSharedPreferences("userinfo",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=preferences.edit();
+
+                editor.putString("msgDate", spDate);
+                editor.commit();
                 Intent intent = new Intent(TeacherActivity.this,StuNews.class);
                 teacher_spase1.setVisibility(View.INVISIBLE);
                 startActivity(intent);
@@ -210,16 +222,15 @@ public class TeacherActivity extends BaseActivity {
     /**
      * 初始化网络请求
      * */
-    public void initOkHttp() {
+
+    //查询是否是最新消息
+    private void findNewMsg(){
         client = new OkHttpClient.Builder()
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
                 .build();
-    }
-    //查询是否是最新消息
-    private void scanCodeSign(){
         RequestBody requestBodyPost = new FormBody.Builder()
-                .add("status",1+"")
+                .add("status", 1 + "")
                 .build();
         Request requestPost = new Request.Builder()
                 .url(httpUrl.StuNews)
@@ -240,27 +251,27 @@ public class TeacherActivity extends BaseActivity {
                     @Override
                     public void run() {
 
-                        Log.d("网络请求返回值",retStr);
+                        Log.d("网络请求返回值", retStr);
 
                         try {
+                            //{"msgDate":"2017-01-18 15:27:40","msgContent":"张海里荣升一只鸡\n"}
                             JSONObject jsObj = new JSONObject(retStr);
-                            String retStr = jsObj.getString("msgDate");
-                            StringBuffer sb = read();
-                            String date = sb.toString();
-                            if (date.equals("null") || date == "")
-                            {
-                                SimpleDateFormat sDateFormat = new    SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                                date  = sDateFormat.format(new java.util.Date());
-                            }
+                            String msgDate = jsObj.getString("msgDate");
+                            spDate = msgDate;
+                            SharedPreferences preferences=getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+                            String saveDate=preferences.getString("msgDate", null);
 
-
-                            if (retStr.equals(date))
+                            Log.d(TAG, "run: msgDate"+msgDate);
+                            Log.d(TAG, "run: savaDate"+saveDate);
+                            if (msgDate.equals(saveDate))
                             {
+                                Log.d(TAG, "run: 相同");
                                 teacher_spase1.setVisibility(View.INVISIBLE);
                             }else
                             {
+                                Log.d(TAG, "run: 不相同");
+
                                 teacher_spase1.setVisibility(View.VISIBLE);
-                                save(retStr);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -270,42 +281,6 @@ public class TeacherActivity extends BaseActivity {
                 });
             }
         });
-    }
-    private StringBuffer read() {
-        FileInputStream in = null;
-        Scanner s = null;
-        StringBuffer sb = new StringBuffer();
-        try {
-            in = super.openFileInput(FILE_NAME);
-            s = new Scanner(in);
-            while (s.hasNext()) {
-                sb.append(s.next());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return sb;
-    }
-
-    private void save(String data) {
-        FileOutputStream out = null;
-        PrintStream ps = null;
-        try {
-            out = super.openFileOutput(FILE_NAME, Activity.MODE_APPEND);
-            ps = new PrintStream(out);
-            ps.println(data);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (out != null) {
-                try {
-                    out.close();
-                    ps.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 
 

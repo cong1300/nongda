@@ -35,5 +35,7 @@
   <color name="viewfinder_mask">#60000000</color>
   <color name="viewfinder_gray">#FCFCFC</color>
   <color name="gray">#F0F0F0</color>
+  <color name="catgray">#F4F4F4</color>
+
 
 </resources>

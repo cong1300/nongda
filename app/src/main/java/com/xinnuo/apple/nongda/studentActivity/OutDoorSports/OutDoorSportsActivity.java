@@ -25,8 +25,7 @@ public class OutDoorSportsActivity extends AppCompatActivity {
     //运动开始
     public void onClickSports(View view){
         Intent intent = new Intent(this, SportActivity.class);
-//        intent.putExtra(Constants.IMAGES, Constants.images);
-
+        intent.putExtra("studentId",studentId);
         startActivity(intent);
     }
     //运动量

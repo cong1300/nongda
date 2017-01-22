@@ -39,10 +39,12 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+
 public class AdminActivity extends AppCompatActivity {
-    //定义控件
+     //定义控件
     private TextView admin_meeting;
     private TextView admin_spase;
+    private TextView admin_spase1;
     private TextView admin_achievement;
     private TextView admin_setup;
     private TextView admin_Replace;
@@ -52,14 +54,14 @@ public class AdminActivity extends AppCompatActivity {
     private OkHttpClient client;
     private String adminId;
     private final static String FILE_NAME = "xth.txt"; // 设置文件的名称
+    private String spDate;
 
     private String adminName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        initOkHttp();
-        boundControl();
+         boundControl();
         Intent intent = getIntent();
         adminName = intent.getStringExtra("adminName");
         adminId = intent.getStringExtra("adminId");
@@ -80,6 +82,8 @@ public class AdminActivity extends AppCompatActivity {
         admin_setup = (TextView) findViewById(R.id.admin_setup);
         admin_meeting = (TextView) findViewById(R.id.admin_meeting);
         admin_spase = (TextView) findViewById(R.id.admin_spase);
+        admin_spase1 = (TextView) findViewById(R.id.admin_spase1);
+
     }
 
     /**
@@ -152,23 +156,27 @@ public class AdminActivity extends AppCompatActivity {
         admin_spase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences preferences=getSharedPreferences("userinfo",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=preferences.edit();
+
+                editor.putString("msgDate", spDate);
+                editor.commit();
                 Intent intent = new Intent(AdminActivity.this,AdminNewsActivity.class);
                 startActivity(intent);
             }
         });
     }
-    /**
-     * 初始化网络请求
-     * */
-    public void initOkHttp() {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        findNewMsg();
+    }
+    //查询是否是最新消息
+    private void findNewMsg(){
         client = new OkHttpClient.Builder()
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
                 .build();
-    }
-
-    //查询是否是最新消息
-    private void scanCodeSign(){
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("status",1+"")
                 .build();
@@ -188,30 +196,32 @@ public class AdminActivity extends AppCompatActivity {
                 final String retStr = response.body().string();
 
                 runOnUiThread(new Runnable() {
+                    public static final String TAG = "admin";
+
                     @Override
                     public void run() {
 
                         Log.d("网络请求返回值",retStr);
 
                         try {
+                            //{"msgDate":"2017-01-18 15:27:40","msgContent":"张海里荣升一只鸡\n"}
                             JSONObject jsObj = new JSONObject(retStr);
-                            String retStr = jsObj.getString("msgDate");
-                            StringBuffer sb = read();
-                            String date = sb.toString();
-                            if (date.equals("null") || date == "")
-                            {
-                                SimpleDateFormat sDateFormat = new    SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                                date  = sDateFormat.format(new java.util.Date());
-                            }
+                            String msgDate = jsObj.getString("msgDate");
+                            spDate = msgDate;
+                            SharedPreferences preferences=getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+                            String saveDate=preferences.getString("msgDate", null);
 
-
-                            if (retStr.equals(date))
+                            Log.d(TAG, "run: msgDate"+msgDate);
+                            Log.d(TAG, "run: savaDate"+saveDate);
+                            if (msgDate.equals(saveDate))
                             {
-                                admin_spase.setVisibility(View.INVISIBLE);
+                                Log.d(TAG, "run: 相同");
+                                admin_spase1.setVisibility(View.INVISIBLE);
                             }else
                             {
-                                admin_spase.setVisibility(View.VISIBLE);
-                                save(retStr);
+                                Log.d(TAG, "run: 不相同");
+
+                                admin_spase1.setVisibility(View.VISIBLE);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
