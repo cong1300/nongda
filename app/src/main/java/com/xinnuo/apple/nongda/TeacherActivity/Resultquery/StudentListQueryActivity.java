@@ -59,7 +59,7 @@ public class StudentListQueryActivity extends BaseActivity {
             requestWithUserId(itemId,classId, httpUrl.loginUrl);
         }else
         {
-            requestWithUserId(itemId,classId, httpUrl.loginUrl);
+            requestWithUserId(itemId,classId, httpUrl.SportsPerformanceQuery);
         }
 
     }

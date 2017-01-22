@@ -9,7 +9,6 @@ public  class httpUrl {
     private static final String formal = "http://123.56.46.38/JLCitySchool/";
     //测试服务器
     private static final String test = "http://192.168.1.166:9090/nongda/";
-    private static final String my =   "http://192.168.2.107:8080/nongda/";
     private static final String url = test;
     //MainActivity登录
     public static final String loginUrl = url+"iosAppLogin_iosLogin.action";
@@ -119,8 +118,28 @@ public  class httpUrl {
     public static final String DeleteWorkPlan = url + "workplanAction_delWorkplan.action";
     //AddWorkPlan 新增工作计划
     public static final String AddWorkPlan = url + "workplanAction_addWorkplan.action";
-    //SportRules 运动量规则
-    public static final String SportRules = url + "iosAppStudentInfo_StudentInquiryActivityRule.action";
-    //SportRules 运动量提交
-    public static final String SportUpload = url + "iosAppStudentInfo_NewStudentsexercise.action";
+    //sportsdetails 运动详细
+    public static final String SportsDetails = url + "iosAppTeacherInfo_QueryPhysicalMeasurementIsTheProject.action";
+    //SportsScore 运动得分
+    public static final String SportsScore = url + "iosAppTeacherInfo_SingleAddPhysicalFitnessTest.action";
+    //AdminInfo 管理员查询代课合课详情
+    public static final String AdminInfo = url + "iosSubstitute_QueryAllTheTeachersInformations.action";
+    //AdminYes 管理员同意
+    public static final String AdminYes = url + "iosSubstitute_getAgreeSub.action";
+    //AdminNo 管理员拒绝
+    public static final String AdminNo = url + "iosSubstitute_getCancelSub.action";
+    //AdminReleaseMessage 管理员发布消息
+    public static final String AdminReleaseMessage = url + "iosAppTeacherInfo_administratorMessage.action";
+    //DeleteMeeting 删除会议
+    public static final String DeleteMeeting = url + "meetingInfoAction_deleteMeeting.action";
+    //AddMeeting 增加会议
+    public static final String AddMeeting = url + "meetingInfoAction_addMeetings.action";
+    //MeetingOpenSignIn 开启会议签到
+    public static final String MeetingOpenSignIn = url + "meetingInfoAction_OpenClosedMeetingSignIn.action";
+    //TeacherEvaluation 教师评价
+    public static final String TeacherEvaluation = url + "iosAppStudentInfo_teacherEvaluation.action";
+    //AddTeacherEvaluation  新增教师评价
+    public static final String AddTeacherEvaluation = url + "iosAppStudentInfo_addTeacherEvaluation.action";
+    // SportsPerformanceQuery 学生体育查询
+    public static final String SportsPerformanceQuery = url + "iosAppStudentInfo_sportsScoresQuery.action";
  }

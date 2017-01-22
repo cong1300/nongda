@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sports_performance_query"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.xinnuo.apple.nongda.studentActivity.StudentResultQuery.SportsPerformanceQueryActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  学生编号:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView103"
+                android:layout_weight="2"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/stu"
+                android:layout_weight="6"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  学生姓名:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView105"
+                android:layout_weight="2"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView104"
+                android:layout_weight="6"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  学生平时分数:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView107"
+                android:layout_weight="2"
+                android:textColor="@color/contents_text"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView106"
+                android:layout_weight="6"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  学生中考分数:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView109"
+                android:layout_weight="2"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView108"
+                android:layout_weight="6"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  学生模考分数:"
+                android:layout_width="0dp"
+                android:id="@+id/textView111"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView110"
+                android:layout_weight="6"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  学生技术分数:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView113"
+                android:layout_weight="2"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView112"
+                android:layout_weight="6"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="  学生总分数:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView115"
+                android:layout_weight="2"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView114"
+                android:layout_weight="6"
+                android:textColor="@color/contents_text"
+                android:gravity="center"
+                android:textAlignment="textStart" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
