@@ -4,7 +4,9 @@ package com.xinnuo.apple.nongda.studentActivity;
  * */
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -32,6 +34,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -62,6 +65,7 @@ public class StudentActivity extends AppCompatActivity {
     private String id;
     private String password;
     private OkHttpClient client;
+    private String spDate;
     private final static String FILE_NAME = "xth.txt"; // 设置文件的名称
 
     @Override
@@ -77,6 +81,14 @@ public class StudentActivity extends AppCompatActivity {
         student_name.setText(name);
         account_number.setText(studentNo);
         clickJump();
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        findNewMsg();
     }
 
     /**
@@ -192,14 +204,24 @@ public class StudentActivity extends AppCompatActivity {
         stu_spase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                SharedPreferences preferences=getSharedPreferences("userinfo",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=preferences.edit();
+
+                editor.putString("msgDate", spDate);
+                editor.commit();
+
                 Intent intent = new Intent(StudentActivity.this,StuNews.class);
-                stu_spase1.setVisibility(View.INVISIBLE);
-                startActivity(intent);
+                 startActivity(intent);
             }
         });
     }
     //查询是否是最新消息
-    private void scanCodeSign(){
+    private void findNewMsg(){
+        client = new OkHttpClient.Builder()
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
+                .build();
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("status",1+"")
                 .build();
@@ -219,30 +241,32 @@ public class StudentActivity extends AppCompatActivity {
                 final String retStr = response.body().string();
 
                 runOnUiThread(new Runnable() {
+                    public static final String TAG = "消息 = ";
+
                     @Override
                     public void run() {
 
                         Log.d("网络请求返回值",retStr);
 
                         try {
+                            //{"msgDate":"2017-01-18 15:27:40","msgContent":"张海里荣升一只鸡\n"}
                             JSONObject jsObj = new JSONObject(retStr);
-                            String retStr = jsObj.getString("msgDate");
-                            StringBuffer sb = read();
-                            String date = sb.toString();
-                            if (date.equals("null") || date == "")
-                            {
-                                SimpleDateFormat sDateFormat = new    SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                                date  = sDateFormat.format(new java.util.Date());
-                            }
+                            String msgDate = jsObj.getString("msgDate");
+                            spDate = msgDate;
+                            SharedPreferences preferences=getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+                            String saveDate=preferences.getString("msgDate", null);
 
-
-                            if (retStr.equals(date))
+                            Log.d(TAG, "run: msgDate"+msgDate);
+                            Log.d(TAG, "run: savaDate"+saveDate);
+                            if (msgDate.equals(saveDate))
                             {
+                                Log.d(TAG, "run: 相同");
                                 stu_spase1.setVisibility(View.INVISIBLE);
                             }else
                             {
+                                Log.d(TAG, "run: 不相同");
+
                                 stu_spase1.setVisibility(View.VISIBLE);
-                                save(retStr);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -253,41 +277,8 @@ public class StudentActivity extends AppCompatActivity {
             }
         });
     }
-    private StringBuffer read() {
-        FileInputStream in = null;
-        Scanner s = null;
-        StringBuffer sb = new StringBuffer();
-        try {
-            in = super.openFileInput(FILE_NAME);
-            s = new Scanner(in);
-            while (s.hasNext()) {
-                sb.append(s.next());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return sb;
-    }
 
-    private void save(String data) {
-        FileOutputStream out = null;
-        PrintStream ps = null;
-        try {
-            out = super.openFileOutput(FILE_NAME, Activity.MODE_APPEND);
-            ps = new PrintStream(out);
-            ps.println(data);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (out != null) {
-                try {
-                    out.close();
-                    ps.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
+
+
 
 }

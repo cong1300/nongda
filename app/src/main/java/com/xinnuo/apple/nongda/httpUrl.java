@@ -114,6 +114,13 @@ public  class httpUrl {
     public static final String UpdateWorkPlan = url + "workplanAction_updateWorkplan.action";
     //SportCount 运动量查询
     public static final String SportCount = url + "iosAppStudentInfo_StudentsexerciseShow.action";
+    //SportRules  运动量规则
+    public static final String SportRules = url + "iosAppStudentInfo_StudentInquiryActivityRule.action";
+
+    //SportUpload 运动量提交
+    public static final String SportUpload = url + "iosAppStudentInfo_NewStudentsexercise.action";
+
+
     //DeleteWorkPlan 删除工作计划
     public static final String DeleteWorkPlan = url + "workplanAction_delWorkplan.action";
     //AddWorkPlan 新增工作计划

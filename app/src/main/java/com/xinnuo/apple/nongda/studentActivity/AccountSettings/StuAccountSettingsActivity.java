@@ -111,6 +111,8 @@ public class StuAccountSettingsActivity extends AppCompatActivity  {
                                 SharedPreferences.Editor editor = sp.edit();
 
                                 editor.putBoolean("pswd_checkBox", false);
+                                editor.putString("msgDate", null);
+
                                 editor.commit();
 
                                 //进行页面跳转，跳回登录界面
