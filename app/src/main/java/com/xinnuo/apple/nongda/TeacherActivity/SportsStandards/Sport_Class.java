@@ -19,7 +19,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -30,49 +29,66 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class SportsStandards extends BaseActivity {
+public class Sport_Class extends BaseActivity {
     private OkHttpClient client;
-    private String teacherId;
+    private String id;
+    private String sportkindSex;
+    private String sportkindName;
+    private String status;
     private ListView listView;
     private JSONArray dataArr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sports_standards);
+        setContentView(R.layout.activity_sport__class);
         initOkHttp();
-        Intent intent = getIntent();
-        teacherId = intent.getStringExtra("teacherId");
-        Log.d("教师Id  = ",teacherId);
-        requestWithUserId();
-        listView= (ListView)findViewById(R.id.list_sport_standards);
+        listView = (ListView) findViewById(R.id.list_stu_sport_class);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long is) {
                 try {
                     //点击相应的班级进行跳转
-                    Intent intent=new Intent(SportsStandards.this,SportsDetails.class);
+                    Intent intent=new Intent(Sport_Class.this,SportsScore.class);
                     JSONObject js = dataArr.getJSONObject(position);
                     //传值 班级id 所教班级id
-                    intent.putExtra("id",js.getString("id"));
+                    intent.putExtra("id",id);
+                    intent.putExtra("sex",js.getString("sex"));
+                    intent.putExtra("studentId",js.getString("id"));
+                    intent.putExtra("studentNo",js.getString("studentNo"));
+                    intent.putExtra("name",js.getString("name"));
+                    intent.putExtra("sportkindSex",sportkindSex);
+                    intent.putExtra("sportkindName",sportkindName);
+                    intent.putExtra("status",status);
                     startActivity(intent);
+                    finish();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
     }
-    /**
-     * 请求方法
-     * */
-    private  void requestWithUserId(){
-        //菊花的开始方法
+    protected void onStart()
+    {
+        super.onStart();
+        //取出上个界面传过来的id
+        Intent intent = getIntent();
+        id = intent.getStringExtra("id");
+        sportkindSex = intent.getStringExtra("sportkindSex");
+        sportkindName = intent.getStringExtra("sportkindName");
+        status = intent.getStringExtra("status");
+        Log.d("*****",status+"*****************************");
+        requestWithUserId(id);
+    }
+    //请求方法
+    private  void requestWithUserId(String id){
         mLoading.show();
+        Log.d("StudentList ==== ", id);
         RequestBody requestBodyPost = new FormBody.Builder()
-                .add("id",teacherId)
+                .add("id",id)   //id
                 .build();
         Request requestPost = new Request.Builder()
-                .url(httpUrl.teacherClubUrl)
+                .url(httpUrl.TeacherClubStudentNumberUrl)    //请求地址
                 .post(requestBodyPost)
                 .build();
         client.newCall(requestPost).enqueue(new Callback() {
@@ -80,7 +96,7 @@ public class SportsStandards extends BaseActivity {
             public void onFailure(Call call, IOException e) {
 
             }
-            //接收方法
+            //接收后台返回值方法
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 //接收httpresponse返回的json数据
@@ -95,78 +111,79 @@ public class SportsStandards extends BaseActivity {
                             //解析json数据
                             jsonParseWithJsonStr(retStr);
                         } catch (JSONException e) {
-                            mLoading.dismiss();
                             e.printStackTrace();
                         }
+
+
                     }
                 });
             }
         });
     }
 
-    /**
-     * 解析数据方法
-     * */
-    //json解析方法
+    //json解析
 
     private  void jsonParseWithJsonStr (String jsonStr) throws JSONException {
 
         JSONArray jsArr = new JSONArray(jsonStr);
-
-        List<String> data = new ArrayList<String>();
+        dataArr = jsArr;
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
+
+        HashMap<String, Object> map2 = new HashMap<String, Object>();
+        map2.put("Item1","序 号");
+        map2.put("Item2"," 学 号");
+        map2.put("Item3","姓 名");
+        map2.put("Item4","班 级");
+        map2.put("Item5","性 别");
+        listItem.add(map2);
+
+        /*
+        *   "id": 42960,
+            "sex": "1",(1 = 男 、2 = 女)
+            "studentNo": "14011411",
+            "gradeId": 2,
+            "name": "姜博",
+            "className": "汉语14-4",
+            "collegeName": "人文学院"*/
         for (int i = 0; i < jsArr.length(); i++) {
-            JSONObject jss = jsArr.getJSONObject(i);
-            JSONArray jsarr = jss.getJSONArray("classList");
-            dataArr = jsarr;
-            for (int j = 0; j < jsarr.length(); j++)
-            {
-                JSONObject js = jsarr.getJSONObject(j);
 
-            /*
-            * "startTime": "3,4节",
-                "id": 159,
-                "sex": "全",
-                "gradeId": "二年级",
-                "factAmount": 30,
-                "classDate": "周五",
-                "sportsClassNo": "0101",
-                "ratingAmount": 18,
-                "sportsClassName": "健身健美",
-                "teacherName": "王大为",
-                "schoolDistrictId": "健身馆",
-                "teacherId": 19
-                */
-                String sportsClassNo = js.getString("sportsClassNo");
-                String className = js.optString("sportsClassName");
-                String teacherName = js.optString("teacherName");
-                String factAmount = js.optString("factAmount");
-                String schoolDistrictId = js.optString("schoolDistrictId");
-                String classDate = js.optString("classDate");
-                String startTime = js.optString("startTime");
-                Log.d("******",className);
-                HashMap<String, Object> map = new HashMap<String, Object>();
-//            map.put("id",id);
-                map.put("sportsClassNo",sportsClassNo);
-                map.put("className",className);
-                map.put("teacherName",teacherName);
-                map.put("factAmount",factAmount);
-                map.put("schoolDistrictId",schoolDistrictId);
-                map.put("classDate",classDate);
-                map.put("startTime",startTime);
-
+            String jsStr = jsArr.getString(i);
+            JSONObject js = jsArr.getJSONObject(i);
+            HashMap<String, Object> map = new HashMap<String, Object>();
+            map.put("Item1",i+1);
+            map.put("Item2", js.getString("studentNo"));
+            map.put("Item3", js.getString("name"));
+            map.put("Item4", js.getString("collegeName")+"\n"+js.getString("className"));
+            String sex = null;
+            if (js.getString("sex").equals("1")){
+                sex = "男";
+                map.put("Item5", sex);
+            } else{
+                sex = "女";
+                map.put("Item5", sex);
+            }
+            if (sportkindSex.equals(sex)){
                 listItem.add(map);
             }
+
+
+
         }
+
+
+
+
+
         if (jsArr.length() == 0)
         {
             midToast("无数据",3);
         }
-        SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem, R.layout.item_teacher_club,
-                new  String[]{"sportsClassNo","className","teacherName","factAmount","schoolDistrictId","classDate","startTime"},
-                new int[]{R.id.teacher_club2, R.id.teacher_club4, R.id.teacher_club6, R.id.teacher_club8, R.id.teacher_club10, R.id.teacher_club12, R.id.teacher_club14});
-        listView.setAdapter(qrAdapter);
+        SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem, R.layout.item_teacher_classsize,
+                new  String[]{"Item1","Item2","Item3","Item4","Item5"},
+                new int[]{R.id.teacher_stunumber1, R.id.teacher_stunumber2, R.id.teacher_stunumber3, R.id.teacher_stunumber4, R.id.teacher_stunumber5});
 
+
+        listView.setAdapter(qrAdapter);
     }
     /**
      * 初始化网络请求

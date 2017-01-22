@@ -20,7 +20,6 @@
     <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <!-- 请求网络 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -204,12 +203,30 @@
         <activity android:name=".TeacherActivity.WorkPlan.TeacherUpdateWorkPlan" />
         <activity android:name=".studentActivity.OutDoorSports.OutDoorSportsActivity" />
         <activity android:name=".studentActivity.OutDoorSports.SportActivity" />
-        <activity android:name=".studentActivity.OutDoorSports.SportRecordsActivity"></activity>
+        <activity android:name=".studentActivity.OutDoorSports.SportRecordsActivity" />
         <activity android:name=".TeacherActivity.WorkPlan.TeacherUpdateWorkPlan" />
         <activity android:name=".TeacherActivity.WorkPlan.TeacherAddWorkPlan" />
         <activity android:name=".TeacherActivity.SportsStandards.SportsStandards"></activity>
         <service android:name=".studentActivity.OutDoorSports.StepCounterService" />
 
+        <activity android:name=".TeacherActivity.SportsStandards.SportsStandards" />
+        <activity android:name=".TeacherActivity.SportsStandards.SportsDetails" />
+        <activity android:name=".TeacherActivity.SportsStandards.Sport_Class" />
+        <activity android:name=".TeacherActivity.SportsStandards.SportsScore" />
+        <activity android:name=".Admin.AdminActivity" />
+        <activity android:name=".Admin.Club.AdminClub" />
+        <activity android:name=".Admin.Club.AdminTeacherClassActivity" />
+        <activity android:name=".Admin.AttendanceData.AttendanceDataActivity" />
+        <activity android:name=".Admin.ResultQuery.AdminResultQueryActivity" />
+        <activity android:name=".Admin.Substitute.AdminSubstituteActivity" />
+        <activity android:name=".Admin.News.AdminNewsActivity" />
+        <activity android:name=".Admin.News.ReleaseMessageActivity" />
+        <activity android:name=".Admin.Meeting.AdminMeetingInfoActivity" />
+        <activity android:name=".Admin.Meeting.AdministrationActivity" />
+        <activity android:name=".Admin.Meeting.NewReleaseActivity" />
+        <activity android:name=".Admin.Meeting.AdminQueryAllteacherActivity" />
+        <activity android:name=".Admin.Meeting.MeetingInfoDetailActivity" />
+        <activity android:name=".Admin.Meeting.AdminAttendanceListActivity"></activity>
     </application>
 
 </manifest>

@@ -14,8 +14,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.xinnuo.apple.nongda.Admin.AdminActivity;
 import com.xinnuo.apple.nongda.Binding.StudentBindingActivity;
 import com.xinnuo.apple.nongda.Binding.TeacherBindingActivity;
+import com.xinnuo.apple.nongda.entity.AdminModel;
 import com.xinnuo.apple.nongda.entity.StudentModel;
 import com.xinnuo.apple.nongda.entity.TeacherModel;
 import com.xinnuo.apple.nongda.singin.Student_Singin;
@@ -233,17 +235,12 @@ public class MainActivity extends BaseActivity  {
                 //学生登录
                 if (status == 1)
                 {
-                    midToast("登录成功", 1);
                     //为学生对象赋值
                     studentModel = student_singin.setSutdentInfoWith(jsObj);
                     //调用跳转方法返回intent
                     Intent intent =  student_singin.stu_Login(MainActivity.this,jsObj,studentModel);
                     //启动跳转
                     startActivity(intent);
-                }else if (status == 2)
-                {
-                    midToast("登陆成功",2);
-
                 }
             }else if (loginSta.equals("success"))
             {
@@ -257,6 +254,42 @@ public class MainActivity extends BaseActivity  {
                     intent.putExtra("cardNo",teacherModel.getCardNo());
                     intent.putExtra("phone",teacherModel.getPhone());
                     startActivity(intent);
+                }else if (status == 2)
+                {
+                    /**
+                     *
+                     * "birthday": "null",
+                     "phone": "123456",
+                     "sex": 1,
+                     "status": 2,
+                     "jurisdiction": "1",
+                     "collegeName": "null",
+                     "password": "admin",
+                     "id": 67,
+                     "cardNo": "null",
+                     "picture": "03.jpg",
+                     "name": "admin",
+                     "itro": "null",
+                     "loginSta": "success"*/
+                    AdminModel adminModel = new AdminModel();
+                    adminModel.setBirthday(jsObj.optString("birthday"));
+                    adminModel.setPhone(jsObj.optString("phone"));
+                    adminModel.setSex(jsObj.getInt("sex"));
+                    adminModel.setStatus(jsObj.getInt("status"));
+                    adminModel.setJurisdiction(jsObj.optString("jurisdiction"));
+                    adminModel.setCollegeName(jsObj.optString("collegeName"));
+                    adminModel.setPassword(jsObj.getString("password"));
+                    adminModel.setId(jsObj.getString("id"));
+                    adminModel.setCardNo(jsObj.getString("cardNo"));
+                    adminModel.setPicture(jsObj.getString("picture"));
+                    adminModel.setItro(jsObj.getString("itro"));
+                    adminModel.setLoginSta(jsObj.getString("loginSta"));
+                    adminModel.setName(jsObj.getString("name"));
+                    Intent intent = new Intent(MainActivity.this,AdminActivity.class);
+                    intent.putExtra("adminName",jsObj.getString("name"));
+                    intent.putExtra("adminId",jsObj.getString("id"));
+                    startActivity(intent);
+
                 }
 
             }else if (loginSta.equals("formation"))

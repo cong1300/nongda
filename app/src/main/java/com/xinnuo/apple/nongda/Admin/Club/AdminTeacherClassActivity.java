@@ -1,4 +1,4 @@
-package com.xinnuo.apple.nongda.TeacherActivity.SportsStandards;
+package com.xinnuo.apple.nongda.Admin.Club;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.SimpleAdapter;
 
 import com.xinnuo.apple.nongda.BaseActivity;
 import com.xinnuo.apple.nongda.R;
+import com.xinnuo.apple.nongda.TeacherActivity.club.StudentListActivity;
 import com.xinnuo.apple.nongda.httpUrl;
 
 import org.json.JSONArray;
@@ -30,28 +31,30 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class SportsStandards extends BaseActivity {
+public class AdminTeacherClassActivity extends BaseActivity {
     private OkHttpClient client;
     private String teacherId;
+    private String sportClassId;
     private ListView listView;
     private JSONArray dataArr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sports_standards);
+        setContentView(R.layout.activity_admin_teacher_class);
         initOkHttp();
         Intent intent = getIntent();
-        teacherId = intent.getStringExtra("teacherId");
+        teacherId = intent.getStringExtra("id");
         Log.d("教师Id  = ",teacherId);
+
         requestWithUserId();
-        listView= (ListView)findViewById(R.id.list_sport_standards);
+        listView= (ListView)findViewById(R.id.list_admin_teacher_class);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 try {
                     //点击相应的班级进行跳转
-                    Intent intent=new Intent(SportsStandards.this,SportsDetails.class);
+                    Intent intent=new Intent(AdminTeacherClassActivity.this,StudentListActivity.class);
                     JSONObject js = dataArr.getJSONObject(position);
                     //传值 班级id 所教班级id
                     intent.putExtra("id",js.getString("id"));
@@ -177,4 +180,5 @@ public class SportsStandards extends BaseActivity {
                 .readTimeout(10, TimeUnit.SECONDS)
                 .build();
     }
+
 }

@@ -1,4 +1,4 @@
-package com.xinnuo.apple.nongda.TeacherActivity.SportsStandards;
+package com.xinnuo.apple.nongda.Admin.Club;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.xinnuo.apple.nongda.Admin.AttendanceData.AttendanceDataActivity;
+import com.xinnuo.apple.nongda.Admin.ResultQuery.AdminResultQueryActivity;
 import com.xinnuo.apple.nongda.BaseActivity;
 import com.xinnuo.apple.nongda.R;
 import com.xinnuo.apple.nongda.httpUrl;
@@ -30,37 +32,63 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class SportsStandards extends BaseActivity {
+public class AdminClub extends BaseActivity {
     private OkHttpClient client;
-    private String teacherId;
     private ListView listView;
+    private String teacherId;
     private JSONArray dataArr;
-
+    private int positions;
+    private String name;
+    private String state;
+    private String coordinateId;
+    private String phone;
+    private String subjectName;
+    private String item;
+    private String statu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sports_standards);
+        setContentView(R.layout.activity_admin_club);
         initOkHttp();
         Intent intent = getIntent();
-        teacherId = intent.getStringExtra("teacherId");
-        Log.d("教师Id  = ",teacherId);
-        requestWithUserId();
-        listView= (ListView)findViewById(R.id.list_sport_standards);
+        statu = intent.getStringExtra("statu");
+        listView = (ListView) findViewById(R.id.admin_all_teacher);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 try {
                     //点击相应的班级进行跳转
-                    Intent intent=new Intent(SportsStandards.this,SportsDetails.class);
-                    JSONObject js = dataArr.getJSONObject(position);
-                    //传值 班级id 所教班级id
-                    intent.putExtra("id",js.getString("id"));
-                    startActivity(intent);
+                    if (statu.equals("0")){
+                        Intent intent=new Intent(AdminClub.this,AdminTeacherClassActivity.class);
+                        JSONObject js = dataArr.getJSONObject(position-1);
+                        //传值 班级id 所教班级id
+                        intent.putExtra("id",js.getString("teacherId"));
+                        startActivity(intent);
+                    }else if (statu.equals("1")){
+                        Intent intent=new Intent(AdminClub.this,AttendanceDataActivity.class);
+                        JSONObject js = dataArr.getJSONObject(position-1);
+                        //传值 班级id 所教班级id
+                        intent.putExtra("id",js.getString("teacherId"));
+                        startActivity(intent);
+                    }else if (statu.equals("2")){
+                        Intent intent=new Intent(AdminClub.this,AdminResultQueryActivity.class);
+                        JSONObject js = dataArr.getJSONObject(position-1);
+                        //传值 班级id 所教班级id
+                        intent.putExtra("id",js.getString("teacherId"));
+                        intent.putExtra("itemId",js.getString("item"));
+                        startActivity(intent);
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        requestWithUserId();
     }
     /**
      * 请求方法
@@ -69,10 +97,9 @@ public class SportsStandards extends BaseActivity {
         //菊花的开始方法
         mLoading.show();
         RequestBody requestBodyPost = new FormBody.Builder()
-                .add("id",teacherId)
                 .build();
         Request requestPost = new Request.Builder()
-                .url(httpUrl.teacherClubUrl)
+                .url(httpUrl.QueryAllTheeachers)
                 .post(requestBodyPost)
                 .build();
         client.newCall(requestPost).enqueue(new Callback() {
@@ -112,62 +139,40 @@ public class SportsStandards extends BaseActivity {
     private  void jsonParseWithJsonStr (String jsonStr) throws JSONException {
 
         JSONArray jsArr = new JSONArray(jsonStr);
-
+        dataArr = jsArr;
         List<String> data = new ArrayList<String>();
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
+        HashMap<String, Object> map2 = new HashMap<String, Object>();
+        map2.put("Item1","序 号");
+        map2.put("Item2","姓 名");
+        map2.put("Item3","任教学科");
+        map2.put("Item4","电 话");
+        listItem.add(map2);
         for (int i = 0; i < jsArr.length(); i++) {
-            JSONObject jss = jsArr.getJSONObject(i);
-            JSONArray jsarr = jss.getJSONArray("classList");
-            dataArr = jsarr;
-            for (int j = 0; j < jsarr.length(); j++)
-            {
-                JSONObject js = jsarr.getJSONObject(j);
-
-            /*
-            * "startTime": "3,4节",
-                "id": 159,
-                "sex": "全",
-                "gradeId": "二年级",
-                "factAmount": 30,
-                "classDate": "周五",
-                "sportsClassNo": "0101",
-                "ratingAmount": 18,
-                "sportsClassName": "健身健美",
-                "teacherName": "王大为",
-                "schoolDistrictId": "健身馆",
-                "teacherId": 19
-                */
-                String sportsClassNo = js.getString("sportsClassNo");
-                String className = js.optString("sportsClassName");
-                String teacherName = js.optString("teacherName");
-                String factAmount = js.optString("factAmount");
-                String schoolDistrictId = js.optString("schoolDistrictId");
-                String classDate = js.optString("classDate");
-                String startTime = js.optString("startTime");
-                Log.d("******",className);
-                HashMap<String, Object> map = new HashMap<String, Object>();
-//            map.put("id",id);
-                map.put("sportsClassNo",sportsClassNo);
-                map.put("className",className);
-                map.put("teacherName",teacherName);
-                map.put("factAmount",factAmount);
-                map.put("schoolDistrictId",schoolDistrictId);
-                map.put("classDate",classDate);
-                map.put("startTime",startTime);
-
-                listItem.add(map);
-            }
+            JSONObject js = jsArr.getJSONObject(i);
+            name = js.optString("name");
+            subjectName = js.optString("subjectName");
+            phone = js.optString("phone");
+            HashMap<String, Object> map = new HashMap<String, Object>();
+            map.put("Item1", i+1);
+            map.put("Item2", name);
+            map.put("Item3", subjectName);
+            map.put("Item4", phone);
+            listItem.add(map);
         }
         if (jsArr.length() == 0)
         {
             midToast("无数据",3);
         }
-        SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem, R.layout.item_teacher_club,
-                new  String[]{"sportsClassNo","className","teacherName","factAmount","schoolDistrictId","classDate","startTime"},
-                new int[]{R.id.teacher_club2, R.id.teacher_club4, R.id.teacher_club6, R.id.teacher_club8, R.id.teacher_club10, R.id.teacher_club12, R.id.teacher_club14});
-        listView.setAdapter(qrAdapter);
 
+        SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem, R.layout.item_admin_all_teacher,
+                new  String[]{"Item1","Item2","Item3","Item4"},
+                new int[]{R.id.admin_number,R.id.admin_name,R.id.admin_subject,R.id.admin_phone});
+        listView.setAdapter(qrAdapter);
     }
+
+
+
     /**
      * 初始化网络请求
      * */

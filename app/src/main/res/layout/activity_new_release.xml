@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_new_release"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinnuo.apple.nongda.Admin.Meeting.NewReleaseActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView102"
+                android:layout_weight="6" />
+
+            <TextView
+                android:text="立即发布"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/immediate_release"
+                android:gravity="center"
+                android:layout_weight="2"
+                android:textColor="@color/encode_view"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="主题:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView69"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/contents_text"
+                android:background="@color/encode_view"
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="填写主题名称"
+                android:id="@+id/admin_title"
+                android:layout_weight="6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="面向对象:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView89"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/contents_text"
+                android:background="@color/encode_view"/>
+
+            <TextView
+                android:text="点击添加邀请名单>"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/admin_object"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:textColor="@color/result_minor_text"
+                android:background="@color/encode_view"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="会议时间:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView98"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/contents_text"
+                android:background="@color/encode_view"/>
+
+            <TextView
+                android:text="点击设置时间>"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/admin_meeting_time"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:textColor="@color/result_minor_text"
+                android:background="@color/encode_view"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/Main_pvLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.xinnuo.apple.nongda.Admin.widget.PickTimeView
+                android:id="@+id/pickTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
+            <com.xinnuo.apple.nongda.Admin.widget.PickTimeView
+                android:id="@+id/pickDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.xinnuo.apple.nongda.Admin.widget.PickValueView
+                android:id="@+id/pickValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.xinnuo.apple.nongda.Admin.widget.PickValueView
+                android:id="@+id/pickValues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.xinnuo.apple.nongda.Admin.widget.PickValueView
+                android:id="@+id/pickString"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:text="地点:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView99"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@color/contents_text"
+                android:background="@color/encode_view"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="填写会议地点"
+                android:id="@+id/admin_meeting_place"
+                android:layout_weight="6"
+                android:textColor="@color/contents_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="简介:"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/textView100"
+                android:layout_weight="2"
+                android:textColor="@color/contents_text"
+                android:background="@color/encode_view"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="请填写会议简介"
+                android:id="@+id/admin_meeting_introduction"
+                android:layout_weight="6"
+                android:textColor="@color/contents_text"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
