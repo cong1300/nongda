@@ -9,6 +9,7 @@ public  class httpUrl {
     private static final String formal = "http://123.56.46.38/JLCitySchool/";
     //测试服务器
     private static final String test = "http://192.168.1.166:9090/nongda/";
+    private static final String my =   "http://192.168.2.107:8080/nongda/";
     private static final String url = test;
     //MainActivity登录
     public static final String loginUrl = url+"iosAppLogin_iosLogin.action";
@@ -118,5 +119,8 @@ public  class httpUrl {
     public static final String DeleteWorkPlan = url + "workplanAction_delWorkplan.action";
     //AddWorkPlan 新增工作计划
     public static final String AddWorkPlan = url + "workplanAction_addWorkplan.action";
-    //0y
+    //SportRules 运动量规则
+    public static final String SportRules = url + "iosAppStudentInfo_StudentInquiryActivityRule.action";
+    //SportRules 运动量提交
+    public static final String SportUpload = url + "iosAppStudentInfo_NewStudentsexercise.action";
  }

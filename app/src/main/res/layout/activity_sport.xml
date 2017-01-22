@@ -8,49 +8,119 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/catgray"
     tools:context="com.xinnuo.apple.nongda.studentActivity.OutDoorSports.SportActivity">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView85" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView86"
-        android:layout_below="@+id/textView85"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:text="最小运动量:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_minSport" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_minTime"
+            android:text="最小运动时间:"
+            android:layout_below="@+id/tv_minSport"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="最大运动量:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_maxSport"
+            android:layout_below="@+id/tv_minTime"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="最大运动时间:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_maxTime"
+            android:layout_below="@+id/tv_maxSport"
+            android:layout_alignRight="@+id/btn_sportupload"
+            android:layout_alignEnd="@+id/btn_sportupload" />
+    </LinearLayout>
 
     <TextView
-        android:text="TextView"
+        android:text="请开始采集"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView87"
-        android:layout_below="@+id/textView86"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/tv_SportState"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="92dp" />
+
+    <Switch
+        android:text="采集   "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_sportupload"
+        android:layout_alignRight="@+id/btn_sportupload"
+        android:layout_alignEnd="@+id/btn_sportupload"
+        android:layout_marginBottom="26dp"
+        android:id="@+id/swi_sport" />
 
     <TextView
-        android:text="TextView"
+        android:text="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView88"
-        android:layout_below="@+id/textView87"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/tv_sportCount"
+        android:layout_alignBaseline="@+id/tv_sportTit"
+        android:layout_alignBottom="@+id/tv_sportTit"
+        android:layout_alignRight="@+id/btn_sportout"
+        android:layout_alignEnd="@+id/btn_sportout"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
 
-    <com.ant.liao.GifView
-        android:id="@+id/gif_view"
-        android:layout_width="214dp"
-        android:layout_height="100dp"
-        android:layout_weight="0.45"
-        android:layout_marginTop="34dp"
-        android:layout_below="@+id/textView88"
-        android:layout_toRightOf="@+id/textView88"
-        android:layout_toEndOf="@+id/textView88" />
+    <TextView
+        android:text="运动量："
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_sportTit"
+        android:layout_alignBaseline="@+id/swi_sport"
+        android:layout_alignBottom="@+id/swi_sport"
+        android:layout_alignLeft="@+id/btn_sportout"
+        android:layout_alignStart="@+id/btn_sportout" />
+
+    <Button
+
+        android:text="退出运动"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_sportout"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_alignBaseline="@+id/btn_sportupload"
+        android:layout_alignBottom="@+id/btn_sportupload"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClickOut"
+        />
+
+    <Button
+        android:text="提交数据"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_sportupload"
+        android:layout_marginBottom="123dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onClickUpload"
+        />
+
 
 </RelativeLayout>
