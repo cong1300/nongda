@@ -78,6 +78,12 @@ public class ResultQueryActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 String state = "3";
+                Intent intent = new Intent(ResultQueryActivity.this,TeacherClassQueryActivity.class);
+                intent.putExtra("teacherId",teacherId);
+                intent.putExtra("itemId",itemId);
+                intent.putExtra("state",state);
+                startActivity(intent);
+
 
             }
         });

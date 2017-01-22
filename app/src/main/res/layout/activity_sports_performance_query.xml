@@ -23,19 +23,21 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/textView103"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/stu"
-                android:layout_weight="6"
+                android:id="@+id/stu_number1"
+                android:layout_weight="5"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -48,24 +50,27 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/textView105"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView104"
-                android:layout_weight="6"
+                android:id="@+id/stu_number2"
+                android:layout_weight="5"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:lineSpacingExtra="14sp"
             android:layout_height="40dp">
 
             <TextView
@@ -73,18 +78,21 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/textView107"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:textColor="@color/contents_text"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView106"
-                android:layout_weight="6"
+                android:id="@+id/stu_number3"
+                android:layout_weight="5"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -97,19 +105,21 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/textView109"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView108"
-                android:layout_weight="6"
+                android:id="@+id/stu_number4"
+                android:layout_weight="5"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -121,20 +131,22 @@
                 android:text="  学生模考分数:"
                 android:layout_width="0dp"
                 android:id="@+id/textView111"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:layout_height="match_parent"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView110"
-                android:layout_weight="6"
+                android:id="@+id/stu_number5"
+                android:layout_weight="5"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -147,19 +159,21 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/textView113"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView112"
-                android:layout_weight="6"
+                android:id="@+id/stu_number6"
+                android:layout_weight="5"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
 
         </LinearLayout>
 
@@ -172,20 +186,22 @@
                 android:text="  学生总分数:"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView115"
-                android:layout_weight="2"
+                android:id="@+id/stu_number486"
+                android:layout_weight="4"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:lineSpacingExtra="14sp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView114"
-                android:layout_weight="6"
+                android:id="@+id/stu_number7"
+                android:layout_weight="5"
                 android:textColor="@color/contents_text"
                 android:gravity="center"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                android:lineSpacingExtra="14sp"/>
         </LinearLayout>
 
         <Space

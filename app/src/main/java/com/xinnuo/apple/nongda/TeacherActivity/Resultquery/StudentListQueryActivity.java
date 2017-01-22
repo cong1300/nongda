@@ -56,10 +56,10 @@ public class StudentListQueryActivity extends BaseActivity {
             requestWithUserId(itemId,classId, httpUrl.StudentPhysicalFitnessScore);
         }else  if (state.equals("3"))
         {
-            requestWithUserId(itemId,classId, httpUrl.loginUrl);
+            requestWithUserId(itemId,classId, httpUrl.SportsClassIdQueryStudentsOnline);
         }else
         {
-            requestWithUserId(itemId,classId, httpUrl.SportsPerformanceQuery);
+            requestWithUserId(itemId,classId, httpUrl.TeacherSportsPerformanceQuery);
         }
 
     }
@@ -72,6 +72,7 @@ public class StudentListQueryActivity extends BaseActivity {
         mLoading.show();
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("classId",id)
+                .add("sportclassId",id)
                 .add("itemId",itemId)
                 .build();
         Request requestPost = new Request.Builder()
@@ -179,7 +180,67 @@ public class StudentListQueryActivity extends BaseActivity {
 
                 listItem.add(map);
             }
+        }else if (state.equals("4")){
+            HashMap<String, Object> map2 = new HashMap<String, Object>();
+            map2.put("count", "序 号");
+            map2.put("studentNo", " 学 号");
+            map2.put("stuname", "姓 名");
+            map2.put("number", "体育成绩");
+            listItem.add(map2);
+            for (int i = 0; i < jsArr.length(); i++) {
+                JSONObject js = jsArr.getJSONObject(i);
+
+            /*
+            * "studentNo": "11042227  ",
+            *  "name": "张烁",
+            *  "number": 0
+            */
+                String count = i + 1 + "";
+                String studentNo = js.optString("studentNo");
+                String stuname = js.optString("name");
+                String number = js.optString("zongFen");
+                Log.d("******", studentNo);
+                HashMap<String, Object> map = new HashMap<String, Object>();
+//              map.put("id",id);
+                map.put("count", count);
+                map.put("studentNo", studentNo);
+                map.put("stuname", stuname);
+                map.put("number", number);
+
+                listItem.add(map);
+            }
+        }else if (state.equals("3")){
+            HashMap<String, Object> map2 = new HashMap<String, Object>();
+            map2.put("count", "序 号");
+            map2.put("studentNo", " 学 号");
+            map2.put("stuname", "姓 名");
+            map2.put("number", "分 数");
+            listItem.add(map2);
+            for (int i = 0; i < jsArr.length(); i++) {
+                JSONObject js = jsArr.getJSONObject(i);
+
+            /*
+            * "studentNo": "11042227  ",
+            *  "name": "张烁",
+            *  "number": 0
+            */
+                String count = i + 1 + "";
+                String studentNo = js.optString("studentNo");
+                String stuname = js.optString("name");
+                String number = js.optString("stuScore");
+                Log.d("******", studentNo);
+                HashMap<String, Object> map = new HashMap<String, Object>();
+//              map.put("id",id);
+                map.put("count", count);
+                map.put("studentNo", studentNo);
+                map.put("stuname", stuname);
+                map.put("number", number);
+
+                listItem.add(map);
+            }
         }
+
+
         if (jsArr.length() == 0)
         {
             midToast("无数据",3);

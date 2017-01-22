@@ -2,6 +2,7 @@ package com.xinnuo.apple.nongda.studentActivity.AccountSettings;
 /**
  * 账号设置界面 里面包含5个功能
  * */
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.xinnuo.apple.nongda.Binding.StudentBindingActivity;
 import com.xinnuo.apple.nongda.MainActivity;
 import com.xinnuo.apple.nongda.R;
 
@@ -57,7 +59,11 @@ public class StuAccountSettingsActivity extends AppCompatActivity  {
         stu_account_setting1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(StuAccountSettingsActivity.this,StudentBindingActivity.class);
+                intent.putExtra("id",id);
+                intent.putExtra("studentNo",studentNo);
+                intent.putExtra("password",password);
+                startActivity(intent);
             }
         });
         //修改密码

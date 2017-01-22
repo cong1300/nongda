@@ -142,4 +142,8 @@ public  class httpUrl {
     public static final String AddTeacherEvaluation = url + "iosAppStudentInfo_addTeacherEvaluation.action";
     // SportsPerformanceQuery 学生体育查询
     public static final String SportsPerformanceQuery = url + "iosAppStudentInfo_sportsScoresQuery.action";
+    // TeacherSportsPerformanceQuery 教师查学生体育查询
+    public static final String TeacherSportsPerformanceQuery = url + "iosAppTeacherInfo_AccordingToThePhysicalEducationClass.action";
+    //SportsClassIdQueryStudentsOnline 在线答题成绩查询
+    public static final String SportsClassIdQueryStudentsOnline = url + "iosAppTeacherInfo_SportsClassIdQueryStudentsOnline.action";
  }

@@ -72,7 +72,7 @@ public class StudentResultQueryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(StudentResultQueryActivity.this,SportsPerformanceQueryActivity.class);
-                intent.putExtra("id",id);
+                intent.putExtra("studentNo",studentNo);
                 startActivity(intent);
             }
         });

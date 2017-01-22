@@ -2,6 +2,7 @@ package com.xinnuo.apple.nongda.TeacherActivity.AccountSettings;
 /**
  * 账号设置主界面
  * */
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.xinnuo.apple.nongda.Binding.TeacherBindingActivity;
 import com.xinnuo.apple.nongda.MainActivity;
 import com.xinnuo.apple.nongda.R;
 
@@ -56,7 +58,11 @@ public class AccountSettingsActivity extends AppCompatActivity {
         account_setting1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(AccountSettingsActivity.this, TeacherBindingActivity.class);
+                intent.putExtra("phone",phone);
+                intent.putExtra("cardNo",cardNo);
+                intent.putExtra("teacherId",teacherId);
+                startActivity(intent);
             }
         });
         //修改密码

@@ -230,6 +230,7 @@ public class TeacherAddWorkPlan extends BaseActivity {
                                 Intent intent = new Intent(TeacherAddWorkPlan.this,TeacherWorkPlan.class);
                                 intent.putExtra("teacherId",teacherId);
                                 startActivity(intent);
+                                finish();
                             }
                         });
                 builder.show();

@@ -339,6 +339,7 @@ public class TeacherUpdateWorkPlan extends BaseActivity implements
                                                     Intent intent = new Intent(TeacherUpdateWorkPlan.this,TeacherWorkPlan.class);
                                                     intent.putExtra("teacherId",teacherId);
                                                     startActivity(intent);
+                                                    finish();
                                                 }
                                             });
                                     builder.show();

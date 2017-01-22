@@ -64,42 +64,42 @@ public class TeacherScoreActivity extends BaseActivity {
         core2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                core = "0分";
+                core = "0";
                 core1.setText(core);
             }
         });
         core3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                core = "2分";
+                core = "2";
                 core1.setText(core);
             }
         });
         core4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                core = "2分";
+                core = "2";
                 core1.setText(core);
             }
         });
         core5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                core = "3分";
+                core = "3";
                 core1.setText(core);
             }
         });
         core6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                core = "4分";
+                core = "4";
                 core1.setText(core);
             }
         });
         core7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                core = "5分";
+                core = "5";
                 core1.setText(core);
             }
         });
@@ -145,10 +145,10 @@ public class TeacherScoreActivity extends BaseActivity {
     private  void requestWithUserId(){
         //菊花的开始方法
         mLoading.show();
-
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("teacherId",teacherId)
                 .add("score",core)
+                .add("id",id)
                 .build();
         Request requestPost = new Request.Builder()
                 .url(httpUrl.AddTeacherEvaluation)
