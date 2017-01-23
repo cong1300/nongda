@@ -174,7 +174,7 @@ public class StuClassAttendanceActivity extends BaseActivity {
                                 state = "2";
                                 startLocation();
                                 Toast.makeText(StuClassAttendanceActivity.this, "您选中了："+items[3], Toast.LENGTH_SHORT).show();
-
+                                scanCodeSign();
 
                                 break;
                             case 4:
@@ -622,6 +622,7 @@ public class StuClassAttendanceActivity extends BaseActivity {
                 .add("studentNo",studentNo)
                 .add("state",state)
                 .add("theKey",theKey)
+                .add("teacherId",teacherId)
                 .add("classid",sportClassId)
                 .add("classDate",classDate)
                 .add("signType",signType)

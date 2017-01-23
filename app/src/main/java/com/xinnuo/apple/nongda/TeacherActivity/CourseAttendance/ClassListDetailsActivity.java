@@ -689,6 +689,7 @@ public class ClassListDetailsActivity extends BaseActivity {
                                         intent.putExtra("itemId",itemId);
                                         intent.putExtra("teacherId",teacherId);
                                         startActivity(intent);
+                                        finish();
                                     }
                                 });
                                 builder.show();
