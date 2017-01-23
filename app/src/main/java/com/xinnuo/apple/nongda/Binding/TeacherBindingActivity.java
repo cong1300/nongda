@@ -85,7 +85,16 @@ public class TeacherBindingActivity extends AppCompatActivity implements View.On
                             public void onClick(DialogInterface dialog, int which) {
                                 // 设置TextView文本
                                 //点击是的时候去进行提交
-                                requestWithUserId(userIdStr, passwordStr, teacherId);
+                                if (userIdStr.length() != 6 || passwordStr.length() != 11){
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(TeacherBindingActivity.this);
+                                    builder.setTitle("提示");
+                                    builder.setMessage("手机号是11位，工号为6位！");
+                                    builder.setPositiveButton("确定", null);
+                                    builder.show();
+                                }else{
+                                    requestWithUserId(userIdStr, passwordStr, teacherId);
+                                }
+
                             }
                         }).
                 // 设置取消按钮

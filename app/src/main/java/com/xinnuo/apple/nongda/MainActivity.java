@@ -252,6 +252,7 @@ public class MainActivity extends BaseActivity  {
                     teacherModel = teacher_singin.setTeacherInfo(jsObj);
                     Intent intent = teacher_singin.teacher_Login(MainActivity.this,jsObj,teacherModel);
                     intent.putExtra("cardNo",teacherModel.getCardNo());
+                    intent.putExtra("pswd",teacherModel.getPassword());
                     intent.putExtra("phone",teacherModel.getPhone());
                     startActivity(intent);
                 }else if (status == 2)

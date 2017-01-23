@@ -1,6 +1,5 @@
 package com.xinnuo.apple.nongda.TeacherActivity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,12 +25,7 @@ import com.xinnuo.apple.nongda.studentActivity.News.StuNews;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.text.SimpleDateFormat;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -65,6 +59,7 @@ public class TeacherActivity extends BaseActivity {
     private String itemId;
     private final static String FILE_NAME = "xth.txt"; // 设置文件的名称
     private String spDate;
+    private String pswd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +73,7 @@ public class TeacherActivity extends BaseActivity {
         itemId = intent.getStringExtra("itemId");
         phone = intent.getStringExtra("phone");
         cardNo = intent.getStringExtra("cardNo");
+        pswd = intent.getStringExtra("pswd");
         boundControl();
         assignBtnAction();
         teacher_name.setText(teacherName);
@@ -181,6 +177,7 @@ public class TeacherActivity extends BaseActivity {
                 intent.putExtra("cardNo",cardNo);
                 //Log.d("cardNo = ", cardNo);
                 intent.putExtra("phone",phone);
+                intent.putExtra("pswd",pswd);
                 startActivity(intent);
             }
         });

@@ -93,7 +93,16 @@ public class StudentBindingActivity extends AppCompatActivity implements View.On
                             public void onClick(DialogInterface dialog, int which) {
                                 // 设置TextView文本
                                 //点击是的时候去进行提交
-                                requestWithUserId(userIdStr,passwordStr,studentNo);
+                                if (userIdStr.length() != 18 || passwordStr.length() != 11){
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(StudentBindingActivity.this);
+                                    builder.setTitle("提示");
+                                    builder.setMessage("手机号是11位，身份证号是18位！");
+                                    builder.setPositiveButton("确定", null);
+                                    builder.show();
+                                } else {
+                                    requestWithUserId(userIdStr,passwordStr,studentNo);
+                                }
+
                             }
                         }).
                 // 设置取消按钮

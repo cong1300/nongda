@@ -2,6 +2,8 @@ package com.xinnuo.apple.nongda.studentActivity.StudentResultQuery;
 /**
  * 签到记录查询
  * */
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -93,7 +95,7 @@ public class StuAttendanceRecordActivity extends BaseActivity {
                         try {
                             //解析json数据
                             jsonParseWithJsonStr(retStr);
-                        } catch (JSONException e) {
+                        } catch (Exception e) {
                             mLoading.dismiss();
                             e.printStackTrace();
                         }
@@ -108,33 +110,52 @@ public class StuAttendanceRecordActivity extends BaseActivity {
      * */
     //json解析方法
 
-    private  void jsonParseWithJsonStr (String jsonStr) throws JSONException {
+    private  void jsonParseWithJsonStr (String jsonStr){
 
-        JSONArray jsArr = new JSONArray(jsonStr);
-
-        List<String> data = new ArrayList<String>();
-        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
-        for (int i = 0; i < jsArr.length(); i++) {
-            JSONObject jss = jsArr.getJSONObject(i);
-            JSONArray jsarr = jss.getJSONArray("testDate");
-            String className = jss.optString("sportClassName");
-            String name = jss.getString("name");
-            String number = jsarr.length() + "";
-            HashMap<String, Object> map = new HashMap<String, Object>();
+        JSONArray jsArr = null;
+        try {
+            jsArr = new JSONArray(jsonStr);
+            List<String> data = new ArrayList<String>();
+            ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
+            for (int i = 0; i < jsArr.length(); i++) {
+                JSONObject jss = jsArr.getJSONObject(i);
+                JSONArray jsarr = jss.getJSONArray("testDate");
+                String className = jss.optString("sportClassName");
+                String name = jss.getString("name");
+                String number = jsarr.length() + "";
+                HashMap<String, Object> map = new HashMap<String, Object>();
 //            map.put("id",id);
-            map.put("className",className);
-            map.put("name",name);
-            map.put("number",number);
-            listItem.add(map);
+                map.put("className",className);
+                map.put("name",name);
+                map.put("number",number);
+                listItem.add(map);
+            }
+            if (jsArr.length() == 0)
+            {
+                midToast("无数据",3);
+            }
+            SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem,R.layout.item_stu_attendance_record,
+                    new  String[]{"className","name","number"},
+                    new int[]{R.id.stu_attendance_curriculum,R.id.stu_attendance_teacher,R.id.stu_attendance_number});
+            listView.setAdapter(qrAdapter);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            AlertDialog.Builder builder = new AlertDialog.Builder(StuAttendanceRecordActivity.this);
+            builder.setTitle("提示");
+            builder.setMessage("请先选择课程！");
+            builder.setPositiveButton("确定",  new DialogInterface.OnClickListener() {
+                // 单击事件
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    // 设置TextView文本
+                    //点击是的时候去进行提交
+                    finish();
+                }
+            });
+            builder.show();
         }
-        if (jsArr.length() == 0)
-        {
-            midToast("无数据",3);
-        }
-        SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem,R.layout.item_stu_attendance_record,
-                new  String[]{"className","name","number"},
-                new int[]{R.id.stu_attendance_curriculum,R.id.stu_attendance_teacher,R.id.stu_attendance_number});
-        listView.setAdapter(qrAdapter);
+
+
 
     }
 

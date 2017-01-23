@@ -181,20 +181,11 @@ public class ClassListDetailsActivity extends BaseActivity {
         {
             @Override
             public void onClick(View view) {
-                if (Latitude == 0 && Latitude == 0)
-                {
-                    //statuTV.setText("不是签到时间");
-                    AlertDialog.Builder builder  = new AlertDialog.Builder(ClassListDetailsActivity.this);
-                    builder.setTitle("提示" ) ;
-                    builder.setMessage("请先开启定位！" ) ;
-                    builder.setPositiveButton("确定" ,  null );
-                    builder.show();
-                }else{
+
                     if (distance > 50){
                         mTimer.reStart();
                     }
                     signRequest();
-                }
 
             }
         });
@@ -519,9 +510,14 @@ public class ClassListDetailsActivity extends BaseActivity {
                                 {
 
                                         layout.setVisibility(View.GONE);
-                                        stopLocation();
-                                    destroyLocation();
+                                    if (Latitude == 0.0){
                                         closeLocation();
+                                    }else {
+                                        stopLocation();
+                                        destroyLocation();
+                                        closeLocation();
+                                    }
+
 
 
                                 }
@@ -681,7 +677,6 @@ public class ClassListDetailsActivity extends BaseActivity {
                             classState = jsObj.getString("melodyClass");
                             if (classState.equals("yes")) {
                                 //statuTV.setText("不是签到时间");
-                                stopLocation();
                                 AlertDialog.Builder builder  = new AlertDialog.Builder(ClassListDetailsActivity.this);
                                 builder.setTitle("提示" ) ;
                                 builder.setMessage("成功，本节课结束！" ) ;
@@ -732,7 +727,6 @@ public class ClassListDetailsActivity extends BaseActivity {
                                 builder.show();
                             }
 
-                            stopLocation();
                         } catch (JSONException e) {
                             e.printStackTrace();
                             //statuTV.setText("签到异常");

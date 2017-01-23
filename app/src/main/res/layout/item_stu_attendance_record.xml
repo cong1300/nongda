@@ -28,7 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:background="@color/result_points"
+            android:background="@color/encode_view"
             android:id="@+id/stu_attendance_curriculum"
             android:layout_weight="7"
             android:textAlignment="textStart" />
@@ -58,7 +58,7 @@
             android:layout_width="0dp"
             android:gravity="center"
             android:layout_height="match_parent"
-            android:background="@color/result_points"
+            android:background="@color/encode_view"
             android:id="@+id/stu_attendance_teacher"
             android:layout_weight="7"
             android:textAlignment="textStart" />
@@ -87,7 +87,7 @@
             android:text="TextView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/result_points"
+            android:background="@color/encode_view"
             android:gravity="center"
             android:id="@+id/stu_attendance_number"
             android:layout_weight="7"

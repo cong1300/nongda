@@ -480,6 +480,7 @@ public class StuClassAttendanceActivity extends BaseActivity {
                 String content = data.getStringExtra("codedContent");
                 Bitmap bitmap = data.getParcelableExtra("codedBitmap");
                 String[] ss = content.split(",");
+                Log.d("**********",ss[0]+"+++++"+ss[1]);
                 if (strings.equals(ss[0])){
                     //state (1为扫码签到  2位扫码签退)
                     if (state.equals("1")){
@@ -509,6 +510,7 @@ public class StuClassAttendanceActivity extends BaseActivity {
                 .add("studentNo",studentNo)
                 .add("state",state)
                 .add("theKey",theKey)
+                .add("teacherId",teacherId)
                 .add("classid",sportClassId)
                 .add("classDate",classDate)
                 .add("signType",signType)

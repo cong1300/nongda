@@ -1,6 +1,7 @@
 package com.xinnuo.apple.nongda.studentActivity.TeacherEvaluation;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -147,7 +148,15 @@ public class TeacherEvaluationActivity extends BaseActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(TeacherEvaluationActivity.this);
             builder.setTitle("提示");
             builder.setMessage("请先选择课程！");
-            builder.setPositiveButton("确定", null);
+            builder.setPositiveButton("确定",  new DialogInterface.OnClickListener() {
+                // 单击事件
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    // 设置TextView文本
+                    //点击是的时候去进行提交
+                   finish();
+                }
+            });
             builder.show();
         }
 

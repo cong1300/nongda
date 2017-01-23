@@ -26,6 +26,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
     private String cardNo;
     private String teacherId;
     private String phone;
+    private String pswd;
 
 
 
@@ -38,6 +39,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
         Log.d("cardNo = ", cardNo);
         teacherId = intent.getStringExtra("teacherId");
         phone = intent.getStringExtra("phone");
+        pswd = intent.getStringExtra("pswd");
         binding();
         jump();
     }
@@ -62,6 +64,8 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 intent.putExtra("phone",phone);
                 intent.putExtra("cardNo",cardNo);
                 intent.putExtra("teacherId",teacherId);
+                String state = "2";
+                intent.putExtra("state",state);
                 startActivity(intent);
             }
         });
@@ -73,6 +77,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 intent.putExtra("phone",phone);
                 intent.putExtra("cardNo",cardNo);
                 intent.putExtra("teacherId",teacherId);
+                intent.putExtra("pswd",pswd);
                 startActivity(intent);
             }
         });

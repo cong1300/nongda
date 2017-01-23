@@ -135,7 +135,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                                             {
                                                 // 设置TextView文本
                                                 //点击是的时候去进行提交
-                                                String clubId = item.get(position);
+                                                String clubId = item.get(position-1);
                                                 scanCodeSign(clubId);
                                             }
                                         }).
@@ -337,7 +337,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                     String teacherName = jsonObject.getString("teacherName");
                     String schoolDistrictId = jsonObject.getString("schoolDistrictId");
                     String time = jsonObject.getString("classDate") + "\t" + jsonObject.getString("startTime");
-                    String factAmount = jsonObject.getString("factAmount");
+                    String factAmount = jsonObject.getString("factAmount")+"/"+jsonObject.getString("ratingAmount");
                     String transfer = "申请调课";
                     HashMap<String, Object> map = new HashMap<String, Object>();
                     map.put("sportsClassName", sportsClassName);
@@ -353,16 +353,19 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                     JSONArray jsonArray = js.getJSONArray("classList");
                     if(jsonArray.length()!=0){
                         clubJson = jsonArray;
+                        Log.d("-------------",jsArr.length()+"*****************");
                         for (int j = 0; j < jsonArray.length(); j++)
                         {
-                            JSONObject stuJson = jsonArray.getJSONObject(i);
+                            JSONObject stuJson = jsonArray.getJSONObject(j);
                             item.add(stuJson.getString("id"));
                             classDate = stuJson.getString("classDate");
                             String sportsClassName = stuJson.getString("sportsClassName");
                             String teacherName = stuJson.getString("teacherName");
+                            Log.d("-------------",stuJson.getString("teacherName")+"*****************");
+                            Log.d("-------------",jsonArray.length()+"****"+j+"*****************");
                             String schoolDistrictId = stuJson.getString("schoolDistrictId");
                             String time = stuJson.getString("classDate")+"\t"+stuJson.getString("startTime");
-                            String factAmount = stuJson.getString("factAmount");
+                            String factAmount = stuJson.getString("factAmount")+"/"+stuJson.getString("ratingAmount");
                             String transfer = "加入课程";
                             HashMap<String, Object> map = new HashMap<String, Object>();
                             map.put("sportsClassName",sportsClassName);
@@ -452,6 +455,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                                         intent.putExtra("password",password);
                                         intent.putExtra("studentName",name);
                                         startActivity(intent);
+                                        finish();
                                     }
                                 });
                                 builder.show();

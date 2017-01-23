@@ -39,6 +39,8 @@ public class ModifyPasswordActivity extends BaseActivity implements View.OnClick
     private String phone;
     private String teacherId;
     private String newPswd;
+    private String oldPswd;
+    private String pswd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class ModifyPasswordActivity extends BaseActivity implements View.OnClick
         Log.d("cardNo = ", cardNo);
         phone = intent.getStringExtra("phone");
         teacherId = intent.getStringExtra("teacherId");
+        pswd = intent.getStringExtra("pswd");
 
     }
     //绑定控件
@@ -130,6 +133,7 @@ public class ModifyPasswordActivity extends BaseActivity implements View.OnClick
                     intent.putExtra("phone",phone);
                     intent.putExtra("teacherId",teacherId);
                     startActivity(intent);
+                    finish();
                 }
             }) ;
             builder.show();
@@ -158,7 +162,9 @@ public class ModifyPasswordActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View view) {
+        oldPswd = old_pswd.getText().toString();
         newPswd = new_pswd.getText().toString();
+        if (oldPswd.equals(pswd)){
         if (newPswd.length() > 6) {
             String confirmPswd = confirm_pswd.getText().toString();
             if (newPswd.equals(confirmPswd)) {
@@ -201,6 +207,13 @@ public class ModifyPasswordActivity extends BaseActivity implements View.OnClick
             AlertDialog.Builder builder = new AlertDialog.Builder(ModifyPasswordActivity.this);
             builder.setTitle("提示");
             builder.setMessage("密码长度必须大于6位，请重新输入！");
+            builder.setPositiveButton("确定", null);
+            builder.show();
+        }
+    }else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(ModifyPasswordActivity.this);
+            builder.setTitle("提示");
+            builder.setMessage("旧密码输入不正确，请重新输入！");
             builder.setPositiveButton("确定", null);
             builder.show();
         }

@@ -61,8 +61,10 @@ public class StuAccountSettingsActivity extends AppCompatActivity  {
             public void onClick(View view) {
                 Intent intent = new Intent(StuAccountSettingsActivity.this,StudentBindingActivity.class);
                 intent.putExtra("id",id);
+                String state = "2";
                 intent.putExtra("studentNo",studentNo);
                 intent.putExtra("password",password);
+                intent.putExtra("state",state);
                 startActivity(intent);
             }
         });
