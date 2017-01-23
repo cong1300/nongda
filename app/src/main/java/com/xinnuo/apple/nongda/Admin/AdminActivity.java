@@ -27,7 +27,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -82,7 +81,7 @@ public class AdminActivity extends AppCompatActivity {
         admin_setup = (TextView) findViewById(R.id.admin_setup);
         admin_meeting = (TextView) findViewById(R.id.admin_meeting);
         admin_spase = (TextView) findViewById(R.id.admin_spase);
-        admin_spase1 = (TextView) findViewById(R.id.admin_spase1);
+        admin_spase1 = (TextView) findViewById(R.id.admin_spase1s);
 
     }
 

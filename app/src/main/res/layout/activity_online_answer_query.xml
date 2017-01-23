@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_online_answer_query"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinnuo.apple.nongda.studentActivity.StudentResultQuery.OnlineAnswerQueryActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:text="学 号"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView108"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/encode_view" />
+
+            <TextView
+                android:text="分  数"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView106"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/encode_view" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/encode_view">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/answer_number"
+                android:gravity="center"
+                android:textColor="@color/contents_text" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/answer_score"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/contents_text" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

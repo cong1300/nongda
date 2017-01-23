@@ -3,7 +3,6 @@ package com.xinnuo.apple.nongda.studentActivity;
  * 学生端主界面 点击相应的功能进行跳转
  * */
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -28,12 +27,7 @@ import com.xinnuo.apple.nongda.studentActivity.TeacherShow.TeacherShowActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.text.SimpleDateFormat;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -176,6 +170,7 @@ public class StudentActivity extends AppCompatActivity {
                 Intent intent = new Intent(StudentActivity.this,StudentResultQueryActivity.class);
                 intent.putExtra("id",id);
                 intent.putExtra("studentNo",studentNo);
+                Log.d("=============",studentNo);
                 startActivity(intent);
             }
         });

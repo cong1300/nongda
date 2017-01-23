@@ -178,26 +178,36 @@
         <activity
             android:name=".studentActivity.StudentResultQuery.SignInTimeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".studentActivity.ClassAttendance.StuClassAttendanceActivity"
+        <activity
+            android:name=".studentActivity.ClassAttendance.StuClassAttendanceActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".RetrievePasswordActivity" />
-        <activity android:name=".TeacherActivity.CourseAttendance.Class_ListActivity"
+        <activity
+            android:name=".TeacherActivity.CourseAttendance.Class_ListActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".TeacherActivity.CourseAttendance.ClassListDetailsActivity"
+        <activity
+            android:name=".TeacherActivity.CourseAttendance.ClassListDetailsActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".TeacherActivity.CourseAttendance.TeacherAttendanceListActivity"
+        <activity
+            android:name=".TeacherActivity.CourseAttendance.TeacherAttendanceListActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".TeacherActivity.CourseAttendance.TeacherMakeQRActivity"
+        <activity
+            android:name=".TeacherActivity.CourseAttendance.TeacherMakeQRActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".TeacherActivity.CourseAttendance.CombinedLessonActivity"
+        <activity
+            android:name=".TeacherActivity.CourseAttendance.CombinedLessonActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".TeacherActivity.CourseAttendance.AllTeachersActivity"
+        <activity
+            android:name=".TeacherActivity.CourseAttendance.AllTeachersActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".TeacherActivity.CourseAttendance.ClassListActivity"
+        <activity
+            android:name=".TeacherActivity.CourseAttendance.ClassListActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".TeacherActivity.CourseAttendance.SubstituteCourseActivity"
+        <activity
+            android:name=".TeacherActivity.CourseAttendance.SubstituteCourseActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".studentActivity.StuClub.StuClubActivity"
+        <activity
+            android:name=".studentActivity.StuClub.StuClubActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".BaseActivity" />
         <activity
@@ -216,7 +226,8 @@
         <activity android:name=".studentActivity.OutDoorSports.SportRecordsActivity" />
         <activity android:name=".TeacherActivity.WorkPlan.TeacherUpdateWorkPlan" />
         <activity android:name=".TeacherActivity.WorkPlan.TeacherAddWorkPlan" />
-        <activity android:name=".TeacherActivity.SportsStandards.SportsStandards"></activity>
+        <activity android:name=".TeacherActivity.SportsStandards.SportsStandards" />
+
         <service android:name=".studentActivity.OutDoorSports.StepCounterService" />
 
         <activity android:name=".TeacherActivity.SportsStandards.SportsStandards" />
@@ -239,7 +250,8 @@
         <activity android:name=".Admin.Meeting.AdminAttendanceListActivity" />
         <activity android:name=".studentActivity.TeacherEvaluation.TeacherEvaluationActivity" />
         <activity android:name=".studentActivity.TeacherEvaluation.TeacherScoreActivity" />
-        <activity android:name=".studentActivity.StudentResultQuery.SportsPerformanceQueryActivity"></activity>
+        <activity android:name=".studentActivity.StudentResultQuery.SportsPerformanceQueryActivity" />
+        <activity android:name=".studentActivity.StudentResultQuery.OnlineAnswerQueryActivity"></activity>
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ package com.xinnuo.apple.nongda.studentActivity.StudentResultQuery;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class StudentResultQueryActivity extends AppCompatActivity {
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
         studentNo = intent.getStringExtra("studentNo");
+        Log.d("=============",studentNo);
     }
     /**
     * 绑定控件
@@ -48,6 +50,7 @@ public class StudentResultQueryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(StudentResultQueryActivity.this,StuAttendanceRecordActivity.class);
                 intent.putExtra("id",id);
+                intent.putExtra("studentNo",studentNo);
                 startActivity(intent);
             }
         });
@@ -64,7 +67,10 @@ public class StudentResultQueryActivity extends AppCompatActivity {
         student_query3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(StudentResultQueryActivity.this,OnlineAnswerQueryActivity.class);
+                intent.putExtra("id",id);
+                intent.putExtra("studentNo",studentNo);
+                startActivity(intent);
             }
         });
         //体育成绩查询

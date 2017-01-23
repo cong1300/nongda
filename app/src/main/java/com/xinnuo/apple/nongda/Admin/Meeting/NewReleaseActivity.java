@@ -60,6 +60,7 @@ public class NewReleaseActivity extends BaseActivity implements View.OnClickList
     SimpleDateFormat sdfDate;
     private String meetingTime;
     private String teacherId;
+    private String titles1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +83,9 @@ public class NewReleaseActivity extends BaseActivity implements View.OnClickList
         }
         if (intent.getStringExtra("teacherId") != null){
             teacherId = intent.getStringExtra("teacherId");
+        }
+        if (intent.getStringExtra("titles1") != null){
+            title.setText(intent.getStringExtra("titles1"));
         }
 
 
@@ -137,6 +141,7 @@ public class NewReleaseActivity extends BaseActivity implements View.OnClickList
                                 Toast.makeText(NewReleaseActivity.this, "您选中了："+items[1], Toast.LENGTH_SHORT).show();
                                 Intent intent2 = new Intent(NewReleaseActivity.this, AdminQueryAllteacherActivity.class);
                                 intent2.putExtra("teacherId",teacherId);
+                                intent2.putExtra("titles",title.getText().toString());
                                 startActivity(intent2);
                                 oject.setText(items[1]);
                                 state = 1;

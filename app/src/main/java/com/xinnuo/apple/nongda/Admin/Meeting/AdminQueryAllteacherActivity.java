@@ -65,6 +65,7 @@ public class AdminQueryAllteacherActivity extends BaseActivity {
     private Button cancle;
     private Button select;
     private int count = 0;
+    private String titles;
     public static boolean visiblecheck = true;  //是否显示checkbox
 
     public static boolean isMulChoice = true; //是否多选
@@ -127,6 +128,7 @@ public class AdminQueryAllteacherActivity extends BaseActivity {
                                             }
                                             intent.putExtra("string",arraylist5);
                                             intent.putExtra("teacherId",teacherIds);
+                                            intent.putExtra("titles1",titles);
                                             startActivity(intent);
                                         }catch (Exception e){
 

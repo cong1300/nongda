@@ -153,4 +153,6 @@ public  class httpUrl {
     public static final String TeacherSportsPerformanceQuery = url + "iosAppTeacherInfo_AccordingToThePhysicalEducationClass.action";
     //SportsClassIdQueryStudentsOnline 在线答题成绩查询
     public static final String SportsClassIdQueryStudentsOnline = url + "iosAppTeacherInfo_SportsClassIdQueryStudentsOnline.action";
+    //StuSportsClassIdQueryStudentsOnline                学生在线答题成绩查询
+    public static final String StuSportsClassIdQueryStudentsOnline = url + "iosAppStudentInfo_SportsClassIdQueryStudentsOnline.action";
  }
