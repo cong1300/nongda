@@ -68,6 +68,7 @@ public class ClassListDetailsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_list_details);
         binding();
+        initOkHttp();
         Intent intent = getIntent();
         sportclassId = intent.getStringExtra("sportclassId");
         Log.d("sportclassId = ",sportclassId);
@@ -272,7 +273,7 @@ public class ClassListDetailsActivity extends BaseActivity {
                     final String coutent = "教师已上传定位坐标，可以定位签到了";
                     startPositioning(coutent);
                 }else {
-
+                    mLoading.dismiss();
                     double signLongitude  = loc.getLongitude();
                     double signLatitude  = loc.getLatitude();
                     distance = DistanceOfTwoPoints(Latitude,Longitude,signLatitude,signLongitude);
@@ -307,6 +308,7 @@ public class ClassListDetailsActivity extends BaseActivity {
 
             } else {
                 //statuTV.setText("定位失败，loc is null");
+                mLoading.dismiss();
             }
         }
     };
@@ -469,7 +471,7 @@ public class ClassListDetailsActivity extends BaseActivity {
     //开启或关闭签到通道
     private void startAndClose(final String method)
     {
-        initOkHttp();
+
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("teacherid",teacherId)
                 .add("theKey","0")
@@ -518,7 +520,9 @@ public class ClassListDetailsActivity extends BaseActivity {
 
                                         layout.setVisibility(View.GONE);
                                         stopLocation();
+                                    destroyLocation();
                                         closeLocation();
+
 
                                 }
                             }else

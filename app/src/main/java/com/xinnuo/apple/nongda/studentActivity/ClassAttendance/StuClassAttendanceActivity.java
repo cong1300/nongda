@@ -101,9 +101,7 @@ public class StuClassAttendanceActivity extends BaseActivity {
                         Log.d("网络请求返回值",retStr);
 
                         try {
-
                             JSONArray jsArr = new JSONArray(retStr);
-
                             List<String> data = new ArrayList<String>();
                             ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
                             for (int i = 0; i < jsArr.length(); i++) {

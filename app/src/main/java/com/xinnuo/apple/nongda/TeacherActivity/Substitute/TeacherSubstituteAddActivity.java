@@ -242,6 +242,7 @@ public class TeacherSubstituteAddActivity extends BaseActivity implements
                     Intent intent = new Intent(TeacherSubstituteAddActivity.this,SubstituteActivity.class);
                     intent.putExtra("teacherId",teacherId);
                     startActivity(intent);
+                    finish();
                 }
                 });
             builder.show();

@@ -309,6 +309,8 @@ public class MainActivity extends BaseActivity  {
                                         Intent intent = new Intent(MainActivity.this, StudentBindingActivity.class);
                                         //传值学生id
                                         intent.putExtra("stuNo", stuNo);
+                                        String state = "1";
+                                        intent.putExtra("state",state);
                                         startActivity(intent);
                                     }
                                 }).
@@ -342,6 +344,8 @@ public class MainActivity extends BaseActivity  {
                                         Intent intent = new Intent(MainActivity.this, TeacherBindingActivity.class);
                                         //传值 教师id
                                         intent.putExtra("teacherInfoId", teacherBindId);
+                                        String state = "1";
+                                        intent.putExtra("state",state);
 
                                         startActivity(intent);
                                     }

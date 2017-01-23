@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.xinnuo.apple.nongda.MainActivity;
 import com.xinnuo.apple.nongda.R;
 import com.xinnuo.apple.nongda.httpUrl;
 import com.xinnuo.apple.nongda.studentActivity.AccountSettings.StuAccountSettingsActivity;
@@ -44,6 +45,7 @@ public class StudentBindingActivity extends AppCompatActivity implements View.On
     private String studentNo;
     private String password;
     private String new_paswd;
+    private String state;
 
 
     @Override
@@ -56,6 +58,10 @@ public class StudentBindingActivity extends AppCompatActivity implements View.On
         studentNo = intent.getStringExtra("studentNo");
         Log.d("stuNo = ",studentNo);
         password = intent.getStringExtra("password");
+        if (intent.getStringExtra("state") != null){
+            state = intent.getStringExtra("state");
+        }
+
         initOkHttp();
 
         //绑定控件
@@ -159,13 +165,20 @@ public class StudentBindingActivity extends AppCompatActivity implements View.On
         if (melodyClass.equals("yes")){
             tvshow.setText("绑定成功！");
             //绑定成功后跳转登录界面
-            Intent intent = new Intent(StudentBindingActivity.this,StuAccountSettingsActivity.class);
-            intent.putExtra("id",id);
-            intent.putExtra("studentNo",studentNo);
-            intent.putExtra("password",password);
-            startActivity(intent);
-            //清理缓存
-            finish();
+            if (state.equals("1")){
+                Intent intent = new Intent(StudentBindingActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }else{
+                Intent intent = new Intent(StudentBindingActivity.this,StuAccountSettingsActivity.class);
+                intent.putExtra("id",id);
+                intent.putExtra("studentNo",studentNo);
+                intent.putExtra("password",password);
+                startActivity(intent);
+                //清理缓存
+                finish();
+            }
+
         }else{
             //绑定失败留在本界面
             tvshow.setText("绑定失败");

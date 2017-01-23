@@ -64,6 +64,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
     private String studentNo;
     private List<String> item = new ArrayList<String>();
     private JSONArray clubJson;
+    ArrayList<HashMap<String, Object>> listItem;
 
     JSONObject datrr;
     @Override
@@ -171,7 +172,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                     @Override
                     public void onClick(View view) {
                         week.setVisibility(View.GONE);
-                        classDate = "星期一";
+                        classDate = "周一";
                         requestWithDataAdd(0,classDate);
                         ListView.setVisibility(View.VISIBLE);
                     }
@@ -180,7 +181,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                     @Override
                     public void onClick(View view) {
                         week.setVisibility(View.GONE);
-                        classDate = "星期二";
+                        classDate = "周二";
                         requestWithDataAdd(0,classDate);
                         ListView.setVisibility(View.VISIBLE);
                     }
@@ -189,7 +190,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                     @Override
                     public void onClick(View view) {
                         week.setVisibility(View.GONE);
-                        classDate = "星期三";
+                        classDate = "周三";
                         requestWithDataAdd(0,classDate);
                         ListView.setVisibility(View.VISIBLE);
                     }
@@ -198,7 +199,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                     @Override
                     public void onClick(View view) {
                         week.setVisibility(View.GONE);
-                        classDate = "星期四";
+                        classDate = "周四";
                         requestWithDataAdd(0,classDate);
                         ListView.setVisibility(View.VISIBLE);
                     }
@@ -207,7 +208,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                     @Override
                     public void onClick(View view) {
                         week.setVisibility(View.GONE);
-                        classDate = "星期五";
+                        classDate = "周五";
                         requestWithDataAdd(0,classDate);
                         ListView.setVisibility(View.VISIBLE);
                     }
@@ -215,7 +216,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                 saturday.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        classDate = "星期六";
+                        classDate = "周六";
                         week.setVisibility(View.GONE);
                         requestWithDataAdd(0,classDate);
                         ListView.setVisibility(View.VISIBLE);
@@ -225,7 +226,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                     @Override
                     public void onClick(View view) {
                         week.setVisibility(View.GONE);
-                        classDate = "星期日";
+                        classDate = "周日";
                         requestWithDataAdd(0,classDate);
                         ListView.setVisibility(View.VISIBLE);
                     }
@@ -245,7 +246,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
     public void binding()
     {
         monday = (TextView) findViewById(R.id.Monday);
-        tuesday = (TextView) findViewById(R.id.Thursday);
+        tuesday = (TextView) findViewById(R.id.Tuesday);
         wednesday = (TextView) findViewById(R.id.Wednesday);
         thursday = (TextView) findViewById(R.id.Thursday);
         friday = (TextView) findViewById(R.id.Friday);
@@ -302,7 +303,7 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
                         try {
                             //解析json数据
                             jsonParseWithJsonStr(retStr);
-                        } catch (JSONException e) {
+                        } catch (Exception e) {
                             mLoading.dismiss();
                             e.printStackTrace();
                         }
@@ -318,68 +319,93 @@ public class StuClubActivity extends BaseActivity implements XListView.IXListVie
      * */
     //json解析方法
 
-    private  void jsonParseWithJsonStr (String jsonStr) throws JSONException {
+    private  void jsonParseWithJsonStr (String jsonStr) {
 
-        JSONArray jsArr = new JSONArray(jsonStr);
-
-        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
-        for (int i = 0; i < jsArr.length() ; i++)
-        {
-            JSONObject js = jsArr.getJSONObject(i);
-            datrr = js;
-            if (js.getString("loginSta").equals("AfterBinding"))
+        JSONArray jsArr = null;
+        try {
+            jsArr = new JSONArray(jsonStr);
+            listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
+            for (int i = 0; i < jsArr.length() ; i++)
             {
-                weeks.setVisibility(View.GONE);
-                JSONObject jsonObject = js.getJSONObject("classList");
-                classDate = jsonObject.getString("classDate");
-                String sportsClassName = jsonObject.getString("sportsClassName");
-                String teacherName = jsonObject.getString("teacherName");
-                String schoolDistrictId = jsonObject.getString("schoolDistrictId");
-                String time = jsonObject.getString("classDate")+"\t"+jsonObject.getString("startTime");
-                String factAmount = jsonObject.getString("factAmount");
-                String transfer = "申请调课";
-                HashMap<String, Object> map = new HashMap<String, Object>();
-                map.put("sportsClassName",sportsClassName);
-                map.put("teacherName",teacherName);
-                map.put("schoolDistrictId",schoolDistrictId);
-                map.put("time",time);
-                map.put("factAmount",factAmount);
-                map.put("transfer",transfer);
-                listItem.add(map);
-
-            }else
-            {
-                JSONArray jsonArray = js.getJSONArray("classList");
-                clubJson = jsonArray;
-                for (int j = 0; j < jsonArray.length(); j++)
-                {
-
-                    JSONObject stuJson = jsonArray.getJSONObject(i);
-                    item.add(stuJson.getString("id"));
-                    classDate = stuJson.getString("classDate");
-                    String sportsClassName = stuJson.getString("sportsClassName");
-                    String teacherName = stuJson.getString("teacherName");
-                    String schoolDistrictId = stuJson.getString("schoolDistrictId");
-                    String time = stuJson.getString("classDate")+"\t"+stuJson.getString("startTime");
-                    String factAmount = stuJson.getString("factAmount");
-                    String transfer = "加入课程";
+                JSONObject js = jsArr.getJSONObject(i);
+                datrr = js;
+                if (js.getString("loginSta").equals("AfterBinding")) {
+                    weeks.setVisibility(View.GONE);
+                    JSONObject jsonObject = js.getJSONObject("classList");
+                    classDate = jsonObject.getString("classDate");
+                    String sportsClassName = jsonObject.getString("sportsClassName");
+                    String teacherName = jsonObject.getString("teacherName");
+                    String schoolDistrictId = jsonObject.getString("schoolDistrictId");
+                    String time = jsonObject.getString("classDate") + "\t" + jsonObject.getString("startTime");
+                    String factAmount = jsonObject.getString("factAmount");
+                    String transfer = "申请调课";
                     HashMap<String, Object> map = new HashMap<String, Object>();
-                    map.put("sportsClassName",sportsClassName);
-                    map.put("teacherName",teacherName);
-                    map.put("schoolDistrictId",schoolDistrictId);
-                    map.put("time",time);
-                    map.put("factAmount",factAmount);
-                    map.put("transfer",transfer);
+                    map.put("sportsClassName", sportsClassName);
+                    map.put("teacherName", teacherName);
+                    map.put("schoolDistrictId", schoolDistrictId);
+                    map.put("time", time);
+                    map.put("factAmount", factAmount);
+                    map.put("transfer", transfer);
                     listItem.add(map);
+
+                }else if(js.getString("loginSta").equals("NoBinding")) {
+
+                    JSONArray jsonArray = js.getJSONArray("classList");
+                    if(jsonArray.length()!=0){
+                        clubJson = jsonArray;
+                        for (int j = 0; j < jsonArray.length(); j++)
+                        {
+                            JSONObject stuJson = jsonArray.getJSONObject(i);
+                            item.add(stuJson.getString("id"));
+                            classDate = stuJson.getString("classDate");
+                            String sportsClassName = stuJson.getString("sportsClassName");
+                            String teacherName = stuJson.getString("teacherName");
+                            String schoolDistrictId = stuJson.getString("schoolDistrictId");
+                            String time = stuJson.getString("classDate")+"\t"+stuJson.getString("startTime");
+                            String factAmount = stuJson.getString("factAmount");
+                            String transfer = "加入课程";
+                            HashMap<String, Object> map = new HashMap<String, Object>();
+                            map.put("sportsClassName",sportsClassName);
+                            map.put("teacherName",teacherName);
+                            map.put("schoolDistrictId",schoolDistrictId);
+                            map.put("time",time);
+                            map.put("factAmount",factAmount);
+                            map.put("transfer",transfer);
+                            listItem.add(map);
+                        }
+                    }else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(StuClubActivity.this);
+                        builder.setTitle("提示");
+                        builder.setMessage("无数据！");
+                        builder.setPositiveButton("确定", null);
+                        builder.show();
+                    }
+
                 }
             }
+
+            SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem,R.layout.item_stu_club,
+                    new  String[]{"sportsClassName","teacherName","schoolDistrictId","time","factAmount","transfer"},
+                    new int[]{R.id.stuclub_curriculum,R.id.stuclub_teacher,R.id.stuclub_classroom,R.id.stuclub_time,R.id.stuclub_numberof,R.id.stuclub_transfers});
+            mListView.setAdapter(qrAdapter);
+            qrAdapter.notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            AlertDialog.Builder builder = new AlertDialog.Builder(StuClubActivity.this);
+            builder.setTitle("提示");
+            builder.setMessage("无数据！");
+            builder.setPositiveButton("确定", null);
+            builder.show();
+            listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
+            SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem,R.layout.item_stu_club,
+                    new  String[]{"sportsClassName","teacherName","schoolDistrictId","time","factAmount","transfer"},
+                    new int[]{R.id.stuclub_curriculum,R.id.stuclub_teacher,R.id.stuclub_classroom,R.id.stuclub_time,R.id.stuclub_numberof,R.id.stuclub_transfers});
+            mListView.setAdapter(qrAdapter);
+            qrAdapter.notifyDataSetChanged();
+
         }
 
-        SimpleAdapter qrAdapter = new SimpleAdapter(this,listItem,R.layout.item_stu_club,
-                new  String[]{"sportsClassName","teacherName","schoolDistrictId","time","factAmount","transfer"},
-                new int[]{R.id.stuclub_curriculum,R.id.stuclub_teacher,R.id.stuclub_classroom,R.id.stuclub_time,R.id.stuclub_numberof,R.id.stuclub_transfers});
-        mListView.setAdapter(qrAdapter);
-        qrAdapter.notifyDataSetChanged();
+
     }
 
 

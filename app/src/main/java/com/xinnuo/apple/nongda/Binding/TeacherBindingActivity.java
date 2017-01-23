@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.xinnuo.apple.nongda.MainActivity;
 import com.xinnuo.apple.nongda.R;
 import com.xinnuo.apple.nongda.TeacherActivity.AccountSettings.AccountSettingsActivity;
 import com.xinnuo.apple.nongda.httpUrl;
@@ -41,6 +42,7 @@ public class TeacherBindingActivity extends AppCompatActivity implements View.On
     private String teacherId;
     private String cardNo;
     private String phone;
+    private String state;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,9 @@ public class TeacherBindingActivity extends AppCompatActivity implements View.On
         Log.d("cardNo = ", cardNo);
         phone = intent.getStringExtra("phone");
         teacherId = intent.getStringExtra("teacherId");
+        if (intent.getStringExtra("state") != null){
+            state = intent.getStringExtra("state");
+        }
 
         //绑定控件
         this.account = (EditText) findViewById(R.id.nameEditTV);
@@ -163,12 +168,19 @@ public class TeacherBindingActivity extends AppCompatActivity implements View.On
         if (bindingState.equals("绑定成功")) {
             tvshow.setText("绑定成功！");
             //绑定成功后跳转登录界面
-            Intent intent = new Intent(TeacherBindingActivity.this, AccountSettingsActivity.class);
-            intent.putExtra("phone",phone);
-            intent.putExtra("cardNo",cardNo);
-            intent.putExtra("teacherId",teacherId);
-            startActivity(intent);
-            finish();
+            if (state.equals("1")){
+                Intent intent = new Intent(TeacherBindingActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }else {
+                Intent intent = new Intent(TeacherBindingActivity.this, AccountSettingsActivity.class);
+                intent.putExtra("phone",phone);
+                intent.putExtra("cardNo",cardNo);
+                intent.putExtra("teacherId",teacherId);
+                startActivity(intent);
+                finish();
+            }
+
         } else {
             //绑定失败留在本界面
             tvshow.setText("绑定失败");

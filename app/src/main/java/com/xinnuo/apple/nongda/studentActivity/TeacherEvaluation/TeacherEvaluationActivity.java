@@ -1,5 +1,6 @@
 package com.xinnuo.apple.nongda.studentActivity.TeacherEvaluation;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -99,7 +100,7 @@ public class TeacherEvaluationActivity extends BaseActivity {
                         try {
                             //解析json数据
                             jsonParseWithJsonStr(retStr);
-                        } catch (JSONException e) {
+                        } catch (Exception e) {
                             mLoading.dismiss();
                             e.printStackTrace();
                         }
@@ -112,33 +113,44 @@ public class TeacherEvaluationActivity extends BaseActivity {
     /**
      * 解析数据方法
      * */
-    private  void jsonParseWithJsonStr (String jsonStr) throws JSONException {
+    private  void jsonParseWithJsonStr (String jsonStr){
 
-        JSONArray jsArr = new JSONArray(jsonStr);
-        List<String> data = new ArrayList<String>();
-        ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
-        for (int i = 0; i < jsArr.length(); i++)
-        {
-            JSONObject js = jsArr.getJSONObject(i);
-            String meetType;
-            if (js.getString("type").equals("nul"))
+        JSONArray jsArr = null;
+        try {
+            jsArr = new JSONArray(jsonStr);
+            List<String> data = new ArrayList<String>();
+            ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
+            for (int i = 0; i < jsArr.length(); i++)
             {
-                type = "未评价";
-                teacherState.setText("未评价");
-            }else
-            {
-                type = "已评价";
-                teacherState.setText("已评价");
+                JSONObject js = jsArr.getJSONObject(i);
+                String meetType;
+                if (js.getString("type").equals("nul"))
+                {
+                    type = "未评价";
+                    teacherState.setText("未评价");
+                }else
+                {
+                    type = "已评价";
+                    teacherState.setText("已评价");
+                }
+                teacherName.setText(js.getString("name"));
+                teacherId = js.getString("id");
             }
-           teacherName.setText(js.getString("name"));
-            teacherId = js.getString("id");
-        }
 
 
-        if (jsArr.length() == 0)
-        {
-            midToast("无数据",3);
+            if (jsArr.length() == 0)
+            {
+                midToast("无数据",3);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            AlertDialog.Builder builder = new AlertDialog.Builder(TeacherEvaluationActivity.this);
+            builder.setTitle("提示");
+            builder.setMessage("请先选择课程！");
+            builder.setPositiveButton("确定", null);
+            builder.show();
         }
+
 
     }
     /**
