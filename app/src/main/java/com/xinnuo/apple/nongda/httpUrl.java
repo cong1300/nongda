@@ -6,7 +6,7 @@ package com.xinnuo.apple.nongda;
 
 public  class httpUrl {
     //正式服务器
-    private static final String formal = "http://123.56.46.38/JLCitySchool/";
+    private static final String formal = "http://101.200.162.157/dbnydx/";
     //测试服务器
     private static final String test = "http://192.168.1.166:9090/nongda/";
     private static final String url = test;
@@ -82,6 +82,8 @@ public  class httpUrl {
     public static final String TeacherStartAttendance = url + "iosAppTeacherInfo_theTeacherAttendanceStatistics.action";
     //TeacherEndOfCourse  //下课按钮
     public static final String TeacherEndOfCourse = url +"iosAppTeacherInfo_TheOriginalTeacherClassAttendance.action";
+    //ClassIsOverTheButton 代课下课
+    public static final String ClassIsOverTheButton = url +"iosAppTeacherInfo_ClassIsOverTheButton.action";
     //TeacherStartPositioning 教师开始签到
     public static final String TeacherStartPositioning = url + "iosAppTeacherInfo_OrientationCheckIn.action";
     //TeacherCloseLocation  教师关闭定位
@@ -155,4 +157,10 @@ public  class httpUrl {
     public static final String SportsClassIdQueryStudentsOnline = url + "iosAppTeacherInfo_SportsClassIdQueryStudentsOnline.action";
     //StuSportsClassIdQueryStudentsOnline                学生在线答题成绩查询
     public static final String StuSportsClassIdQueryStudentsOnline = url + "iosAppStudentInfo_SportsClassIdQueryStudentsOnline.action";
+    //ApplyForExemptionQueery 免试申请查询
+    public static final String ApplyForExemptionQueery = url + "iosAppStudentInfo_anExemptionStatus.action";
+    //AddApplication 添加免试申请
+    public static final String AddApplication = url + "iosAppStudentInfo_toApplyForAnExemption.action";
+    //SingleAddPhysicalFitnessTest
+    public static final String SingleAddPhysicalFitnessTest = url + "iosAppTeacherInfo_SingleAddPhysicalFitnessTest.action";
  }

@@ -76,7 +76,6 @@ public class AllTeachersActivity extends BaseActivity {
                                                 if (state.equals("1"))
                                                 {
                                                     Intent intent=new Intent(AllTeachersActivity.this,SubstituteCourseActivity.class);
-
                                                     JSONObject js = dataArr.getJSONObject(positions);
                                                     //传值 班级id 所教班级id
                                                     intent.putExtra("substituteId",js.getString("substituteId"));

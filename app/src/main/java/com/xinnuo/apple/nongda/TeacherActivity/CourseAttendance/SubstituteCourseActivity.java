@@ -93,6 +93,7 @@ public class SubstituteCourseActivity extends BaseActivity {
         }else
         {
             substituteId = intent.getStringExtra("substituteId");
+            Log.d("substituteId","============"+substituteId);
         }
         if (intent.getStringExtra("itemId") == null || intent.getStringExtra("itemId").equals("null"))
         {
@@ -182,6 +183,7 @@ public class SubstituteCourseActivity extends BaseActivity {
                 Intent intent = new Intent(SubstituteCourseActivity.this,ClassListActivity.class);
                 intent.putExtra("teacherId",teacherId);
                 intent.putExtra("teacherId1",teacherId1);
+                intent.putExtra("substituteId",substituteId);
                 intent.putExtra("state","1");
                 intent.putExtra("itemId",itemId);
                 Log.d("teacherId = ",teacherId+"******"+teacherId1);
@@ -214,11 +216,11 @@ public class SubstituteCourseActivity extends BaseActivity {
         substitute_close_location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (coordinateId.equals("null") || coordinateId == "")
+                if (Longitude == 0.0)
                 {
                     AlertDialog.Builder builder  = new AlertDialog.Builder(SubstituteCourseActivity.this);
                     builder.setTitle("提示" ) ;
-                    builder.setMessage("定位失败请重新定位！" ) ;
+                    builder.setMessage("您还没有开启定位！" ) ;
                     builder.setPositiveButton("确定" ,  null );
                     builder.show();
                 }else {
@@ -231,6 +233,7 @@ public class SubstituteCourseActivity extends BaseActivity {
         substitute_course_starts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("sportclassId",sportclassId+"***********");
                 signRequest();
             }
         });
@@ -239,7 +242,10 @@ public class SubstituteCourseActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 endOfCourse();
-                onDestroy();
+                if (Longitude != 0.0){
+                    onDestroy();
+                }
+
             }
         });
     }
@@ -247,7 +253,6 @@ public class SubstituteCourseActivity extends BaseActivity {
     //开启或关闭签到通道
     private void startAndClose(final String method)
     {
-        initOkHttp();
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("teacherid",teacherId)
                 .add("theKey","0")
@@ -288,7 +293,6 @@ public class SubstituteCourseActivity extends BaseActivity {
                                         @Override
                                         public void onClick(View view) {
                                             startLocation();
-
                                         }
                                     });
                                 }else
@@ -296,7 +300,16 @@ public class SubstituteCourseActivity extends BaseActivity {
 
                                     substitute_layout_effect.setVisibility(View.GONE);
                                     stopLocation();
-                                    closeLocation();
+                                    if(coordinateId != null){
+                                        closeLocation();
+                                    }else{
+                                        AlertDialog.Builder builder  = new AlertDialog.Builder(SubstituteCourseActivity.this);
+                                        builder.setTitle("提示" ) ;
+                                        builder.setMessage("请上传坐标后在关闭定位签到！") ;
+                                        builder.setPositiveButton("确定" ,  null );
+                                        builder.show();
+                                    }
+
 
                                 }
                             }else
@@ -321,7 +334,7 @@ public class SubstituteCourseActivity extends BaseActivity {
     //存入教师坐标
     private void startPositioning(final String content){
 
-        initOkHttp();
+
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("teacherId",teacherId)
                 .add("longitude",Longitude+"")
@@ -374,11 +387,11 @@ public class SubstituteCourseActivity extends BaseActivity {
     }
     //查询教师状态
     private void signRequest(){
-        initOkHttp();
+
         RequestBody requestBodyPost = new FormBody.Builder()
-                .add("sportClassId",sportclassId)
+                .add("sportsClassId",sportclassId)
                 .add("teacherId",teacherId)
-                .add("HaveAclassState","0")
+                .add("HaveAclassState","1")
                 .build();
         Request requestPost = new Request.Builder()
                 .url(httpUrl.TeacherCourseStart)
@@ -454,13 +467,14 @@ public class SubstituteCourseActivity extends BaseActivity {
     }
     //开始上课录入接口
     private void startAttendance(){
-        initOkHttp();
+
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("teacherid",teacherId)
                 .add("HaveAclassState","1")
+                .add("attendState","1")
                 .build();
         Request requestPost = new Request.Builder()
-                .url(httpUrl.TeacherCourseStart)
+                .url(httpUrl.TeacherStartAttendance)
                 .post(requestBodyPost)
                 .build();
         client.newCall(requestPost).enqueue(new Callback() {
@@ -479,8 +493,23 @@ public class SubstituteCourseActivity extends BaseActivity {
                         Log.d("网络请求返回值",retStr);
 
                         try {
-                            JSONObject jsObj = new JSONObject("retStr");
+                            JSONObject jsObj = new JSONObject(retStr);
                             String melodyClass = jsObj.getString("melodyClass");
+                            if (jsObj.getString("melodyClass").equals("离职"))
+                            {
+                                AlertDialog.Builder builder  = new AlertDialog.Builder(SubstituteCourseActivity.this);
+                                builder.setTitle("提示" ) ;
+                                builder.setMessage("上传考勤记录！") ;
+                                builder.setPositiveButton("确定" ,  null );
+                                builder.show();
+                            }else
+                            {
+                                AlertDialog.Builder builder  = new AlertDialog.Builder(SubstituteCourseActivity.this);
+                                builder.setTitle("提示" ) ;
+                                builder.setMessage("开始上课！") ;
+                                builder.setPositiveButton("确定" ,  null );
+                                builder.show();
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -493,7 +522,7 @@ public class SubstituteCourseActivity extends BaseActivity {
     }
     //关闭定位
     private void closeLocation(){
-        initOkHttp();
+
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("id",coordinateId)
                 .build();
@@ -547,12 +576,13 @@ public class SubstituteCourseActivity extends BaseActivity {
     }
     //下课请求
     private void endOfCourse(){
-        initOkHttp();
         RequestBody requestBodyPost = new FormBody.Builder()
-                .add("teacherId",teacherId)
+                .add("supplementaryTeacherId",teacherId)
+                .add("formerTeacherId",teacherId1)
+                .add("substituteId",substituteId)
                 .build();
         Request requestPost = new Request.Builder()
-                .url(httpUrl.TeacherEndOfCourse)
+                .url(httpUrl.ClassIsOverTheButton)
                 .post(requestBodyPost)
                 .build();
         client.newCall(requestPost).enqueue(new Callback() {
@@ -602,7 +632,7 @@ public class SubstituteCourseActivity extends BaseActivity {
                                 });
                                 builder.show();
                             }
-                            else if (retStr.equals("no"))
+                            else if (retStr.equals("noTime"))
                             {
                                 //statuTV.setText("不是签到时间");
                                 AlertDialog.Builder builder  = new AlertDialog.Builder(SubstituteCourseActivity.this);
@@ -611,14 +641,6 @@ public class SubstituteCourseActivity extends BaseActivity {
                                 builder.setPositiveButton("确定" ,  null );
                                 builder.show();
 
-                            }else if (retStr.equals("Error"))
-                            {
-                                //statuTV.setText("服务器异常");
-                                AlertDialog.Builder builder  = new AlertDialog.Builder(SubstituteCourseActivity.this);
-                                builder.setTitle("提示" ) ;
-                                builder.setMessage("失败，未查询到上课时间，请开启课程，满足上课时间后再试！" ) ;
-                                builder.setPositiveButton("确定" ,  null );
-                                builder.show();
                             }else if (retStr.equals("Error"))
                             {
                                 //statuTV.setText("服务器异常");

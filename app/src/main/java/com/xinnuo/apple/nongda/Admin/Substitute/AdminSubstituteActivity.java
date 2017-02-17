@@ -51,6 +51,7 @@ public class AdminSubstituteActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 try {
+                        number = position;
                         final String[] items = new String[]{"同意","拒绝","取消"};
                         final AlertDialog.Builder builder = new AlertDialog.Builder(AdminSubstituteActivity.this);
                         builder.setTitle("操作该条申请？");
@@ -63,6 +64,7 @@ public class AdminSubstituteActivity extends BaseActivity {
                                         JSONObject js = null;
                                         try {
                                             js = dataArr.getJSONObject(number);
+                                            Log.d("网络请求返回值","if"+js.getString("substituteId"));
                                             RequestBody requestBodyPost = new FormBody.Builder()
                                                     .add("id",js.getString("substituteId"))
                                                     .build();
@@ -90,6 +92,7 @@ public class AdminSubstituteActivity extends BaseActivity {
                                                                 if (js.getString("melodyClass").equals("yes")){
                                                                     Intent intent1 = new Intent(AdminSubstituteActivity.this,AdminSubstituteActivity.class);
                                                                     intent1.putExtra("teacherId",teacherId);
+                                                                    Log.d("网络请求返回值","if");
                                                                     startActivity(intent1);
                                                                 }else{
                                                                     AlertDialog.Builder builder  = new AlertDialog.Builder(AdminSubstituteActivity.this);
@@ -97,6 +100,7 @@ public class AdminSubstituteActivity extends BaseActivity {
                                                                     builder.setMessage("异常！" ) ;
                                                                     builder.setPositiveButton("确定" ,  null );
                                                                     builder.show();
+                                                                    Log.d("网络请求返回值","else");
                                                                 }
 
                                                             } catch (JSONException e1) {

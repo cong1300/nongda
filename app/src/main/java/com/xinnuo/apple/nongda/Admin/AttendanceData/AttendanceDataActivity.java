@@ -61,7 +61,7 @@ public class AttendanceDataActivity extends BaseActivity implements XListView.IX
         teacherId = intent.getStringExtra("id");
         tea_attendance_record = (TextView) findViewById(R.id.admin_attendance_record);
         tea_turnover_record = (TextView) findViewById(R.id.admin_turnover_record);
-        tea_tendance_times = (TextView) findViewById(R.id.admin_number);
+        tea_tendance_times = (TextView) findViewById(R.id.tea_numbers);
         initOkHttp();
         tea_attendance_record.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,6 +181,7 @@ public class AttendanceDataActivity extends BaseActivity implements XListView.IX
                         {
                             JSONObject jsonObject = jss.getJSONObject(j);
                             currName = "离职时间:" + jsonObject.getString("DepartureTime");
+                            Log.d("============",currName);
                             tea_tendance_times.setText("考勤:"+number+"次");
                             items.add(currName);
                         }
@@ -193,24 +194,25 @@ public class AttendanceDataActivity extends BaseActivity implements XListView.IX
                             JSONObject jsonObject = jss.getJSONObject(j);
                             currName = "上课时间:" + jsonObject.getString("attendDate");
                             attendEndDate = "下课时间:"+ jsonObject.getString("attendEndDate");
+                            Log.d("============",currName);
                             String s = currName + "\n" +attendEndDate;
                             tea_tendance_times.setText("考勤:"+number+"次");
                             items.add(s);
+
                         }
                     }
                 }
-            }else if (jsonStr.equals("{\"nul\":\"\"}")){
-                midToast("无数据",3);
             }else {
                 midToast("无数据",3);
             }
-
+            Log.d("============",items.size()+"******");
             mAdapter = new ArrayAdapter<String>(AttendanceDataActivity.this, R.layout.item_attendance_data_sta, items);
             mListView.setAdapter(mAdapter);
             mAdapter.notifyDataSetChanged();
             onLoad();
         }catch (Exception e)
         {
+           e.printStackTrace();
             midToast("无数据",3);
             return;
         }

@@ -129,11 +129,11 @@ public class ClassListDetailsActivity extends BaseActivity {
         {
             @Override
             public void onClick(View view) {
-                if (coordinateId.equals("null") || coordinateId == "")
+                if (Longitude == 0)
                 {
                     AlertDialog.Builder builder  = new AlertDialog.Builder(ClassListDetailsActivity.this);
                     builder.setTitle("提示" ) ;
-                    builder.setMessage("定位失败请重新定位！" ) ;
+                    builder.setMessage("定位失败请重新定位,然后再关闭定位！" ) ;
                     builder.setPositiveButton("确定" ,  null );
                     builder.show();
                 }else {
@@ -326,7 +326,7 @@ public class ClassListDetailsActivity extends BaseActivity {
     }
     //查询教师状态
     private void signRequest(){
-        initOkHttp();
+
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("sportsClassId",sportclassId)
                 .add("teacherId",teacherId)
@@ -406,10 +406,10 @@ public class ClassListDetailsActivity extends BaseActivity {
     }
     //开始上课录入接口
     private void startAttendance( int number){
-        initOkHttp();
+
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("teacherid",teacherId)
-                .add("HaveAclassState","1")
+                .add("HaveAclassState","0")
                 .add("attendState",number+"")
                 .build();
         Request requestPost = new Request.Builder()
@@ -593,7 +593,7 @@ public class ClassListDetailsActivity extends BaseActivity {
     }
     //关闭定位
     private void closeLocation(){
-        initOkHttp();
+
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("id",coordinateId)
                 .build();
@@ -647,7 +647,7 @@ public class ClassListDetailsActivity extends BaseActivity {
     }
     //下课请求
     private void endOfCourse(){
-        initOkHttp();
+
         RequestBody requestBodyPost = new FormBody.Builder()
                 .add("teacherId",teacherId)
                 .build();

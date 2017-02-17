@@ -200,17 +200,8 @@ public class MeetingInfoDetailedActivity extends BaseActivity {
 
 
                 startLocation();
-                distance = DistanceOfTwoPoints(Latitude,Longitude,signLatitude,signLongitude);
-                 if (distance < 50 && distance > 0) {
-                     signRequest();
-                 } else {
-                     AlertDialog.Builder builder = new AlertDialog.Builder(MeetingInfoDetailedActivity.this);
-                     builder.setTitle("提示");
-                     builder.setMessage("不是签到位置！");
-                     builder.setPositiveButton("确定", null);
-                     builder.show();
-                     stopLocation();
-                 }
+
+
             }
         });
     }
@@ -281,7 +272,17 @@ public class MeetingInfoDetailedActivity extends BaseActivity {
 //                statuTV.setText(jStr+wStr);
 //                test3TV.setText("定位结果：long = "+Longitude+"lat = "+Latitude);
 
-
+                distance = DistanceOfTwoPoints(Latitude,Longitude,signLatitude,signLongitude);
+                if (distance < 50 && distance > 0) {
+                    signRequest();
+                } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MeetingInfoDetailedActivity.this);
+                    builder.setTitle("提示");
+                    builder.setMessage("不是签到位置！");
+                    builder.setPositiveButton("确定", null);
+                    builder.show();
+                    stopLocation();
+                }
 
             } else {
                 //statuTV.setText("定位失败，loc is null");

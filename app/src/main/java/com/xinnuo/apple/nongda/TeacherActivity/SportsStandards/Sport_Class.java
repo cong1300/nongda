@@ -37,6 +37,7 @@ public class Sport_Class extends BaseActivity {
     private String status;
     private ListView listView;
     private JSONArray dataArr;
+    private String state;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,20 +49,28 @@ public class Sport_Class extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long is) {
                 try {
-                    //点击相应的班级进行跳转
-                    Intent intent=new Intent(Sport_Class.this,SportsScore.class);
-                    JSONObject js = dataArr.getJSONObject(position);
-                    //传值 班级id 所教班级id
-                    intent.putExtra("id",id);
-                    intent.putExtra("sex",js.getString("sex"));
-                    intent.putExtra("studentId",js.getString("id"));
-                    intent.putExtra("studentNo",js.getString("studentNo"));
-                    intent.putExtra("name",js.getString("name"));
-                    intent.putExtra("sportkindSex",sportkindSex);
-                    intent.putExtra("sportkindName",sportkindName);
-                    intent.putExtra("status",status);
-                    startActivity(intent);
-                    finish();
+                    if (state.equals("2")){
+                        //点击相应的班级进行跳转
+                        Intent intent=new Intent(Sport_Class.this,SportsScore.class);
+                        JSONObject js = dataArr.getJSONObject(position);
+                        //传值 班级id 所教班级id
+                        intent.putExtra("id",id);
+                        intent.putExtra("sex",js.getString("sex"));
+                        intent.putExtra("studentId",js.getString("id"));
+                        intent.putExtra("studentNo",js.getString("studentNo"));
+                        intent.putExtra("name",js.getString("name"));
+                        intent.putExtra("sportkindSex",sportkindSex);
+                        intent.putExtra("sportkindName",sportkindName);
+                        intent.putExtra("status",status);
+                        startActivity(intent);
+                        finish();
+                    }else{
+                        Intent intent=new Intent(Sport_Class.this,SportSecondActivity.class);
+                        intent.putExtra("status",status);
+                        startActivity(intent);
+                        finish();
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -77,6 +86,7 @@ public class Sport_Class extends BaseActivity {
         sportkindSex = intent.getStringExtra("sportkindSex");
         sportkindName = intent.getStringExtra("sportkindName");
         status = intent.getStringExtra("status");
+        state = intent.getStringExtra("state");
         Log.d("*****",status+"*****************************");
         requestWithUserId(id);
     }

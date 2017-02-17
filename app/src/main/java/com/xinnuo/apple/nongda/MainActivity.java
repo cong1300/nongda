@@ -241,6 +241,7 @@ public class MainActivity extends BaseActivity  {
                     Intent intent =  student_singin.stu_Login(MainActivity.this,jsObj,studentModel);
                     //启动跳转
                     startActivity(intent);
+                    finish();
                 }
             }else if (loginSta.equals("success"))
             {
@@ -255,6 +256,7 @@ public class MainActivity extends BaseActivity  {
                     intent.putExtra("pswd",teacherModel.getPassword());
                     intent.putExtra("phone",teacherModel.getPhone());
                     startActivity(intent);
+                    finish();
                 }else if (status == 2)
                 {
                     /**
@@ -290,6 +292,7 @@ public class MainActivity extends BaseActivity  {
                     intent.putExtra("adminName",jsObj.getString("name"));
                     intent.putExtra("adminId",jsObj.getString("id"));
                     startActivity(intent);
+                    finish();
 
                 }
 
@@ -309,10 +312,11 @@ public class MainActivity extends BaseActivity  {
                                         //进行页面跳转 跳到绑定界面需要输入身份证号和手机号进行绑定
                                         Intent intent = new Intent(MainActivity.this, StudentBindingActivity.class);
                                         //传值学生id
-                                        intent.putExtra("stuNo", stuNo);
+                                        intent.putExtra("studentNo", stuNo);
                                         String state = "1";
                                         intent.putExtra("state",state);
                                         startActivity(intent);
+                                        finish();
                                     }
                                 }).
                         // 设置取消按钮
@@ -349,6 +353,7 @@ public class MainActivity extends BaseActivity  {
                                         intent.putExtra("state",state);
 
                                         startActivity(intent);
+                                        finish();
                                     }
                                 }).
                         // 设置取消按钮

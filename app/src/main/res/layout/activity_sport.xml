@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout">
 
         <TextView
             android:text="最小运动量:"
@@ -61,7 +62,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="92dp" />
+        android:layout_marginTop="92dp"/>
 
     <Switch
         android:text="采集   "

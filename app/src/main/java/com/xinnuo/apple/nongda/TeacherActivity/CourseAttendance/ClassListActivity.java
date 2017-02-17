@@ -35,7 +35,7 @@ import okhttp3.Response;
 public class ClassListActivity extends BaseActivity {
     private OkHttpClient client;
     private String teacherId;
-    private String teacherId1;
+    private String teacherId1,substituteId;
     private String itemId;
     private ListView listView;
     private JSONArray dataArr;
@@ -50,6 +50,7 @@ public class ClassListActivity extends BaseActivity {
         Intent intent = getIntent();
         teacherId = intent.getStringExtra("teacherId");
         teacherId1 = intent.getStringExtra("teacherId1");
+        substituteId = intent.getStringExtra("substituteId");
         itemId = intent.getStringExtra("itemId");
         state = intent.getStringExtra("state");
         coordinateId = intent.getStringExtra("coordinateId");
@@ -84,6 +85,7 @@ public class ClassListActivity extends BaseActivity {
                        intent.putExtra("startTime",js.getString("startTime"));
                        intent.putExtra("classDate",js.getString("classDate"));
                        intent.putExtra("sportClassName",js.getString("sportClassName"));
+                       intent.putExtra("substituteId",substituteId);
                        intent.putExtra("teacherName",js.getString("name"));
                        intent.putExtra("itemId",itemId);
                        startActivity(intent);

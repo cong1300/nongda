@@ -3,38 +3,31 @@ package com.xinnuo.apple.nongda.studentActivity.CampusDynamics;
  * 校园动态主界面
  * */
 
+import android.app.AlertDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
-import com.xinnuo.apple.nongda.studentActivity.StuClub.StuClubActivity;
-import com.xinnuo.apple.nongda.studentActivity.StudentActivity;
-import com.xinnuo.apple.nongda.studentActivity.TeacherShow.BaseActivity;
 import com.xinnuo.apple.nongda.R;
 import com.xinnuo.apple.nongda.httpUrl;
-import com.xinnuo.apple.nongda.studentActivity.TeacherShow.TeacherShowActivity;
+import com.xinnuo.apple.nongda.studentActivity.TeacherShow.BaseActivity;
 import com.xinnuo.apple.nongda.view.XListView;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -151,7 +144,7 @@ public class StuCampusDynamics extends BaseActivity implements XListView.IXListV
                          try {
                             //解析json数据
                             jsonParseWithJsonStr(retStr);
-                        } catch (JSONException e) {
+                        } catch (Exception e) {
                              e.printStackTrace();
                         }
                     }
@@ -166,7 +159,8 @@ public class StuCampusDynamics extends BaseActivity implements XListView.IXListV
      * */
     //json解析方法
 
-    private  void jsonParseWithJsonStr (final String jsonStr) throws JSONException {
+    private  void jsonParseWithJsonStr (final String jsonStr)  {
+        try{
        ImageView imageView = (ImageView) LayoutInflater.from(StuCampusDynamics.this).inflate(R.layout.item_campus_dynamics, null).findViewById(R.id.stu_photo);
         JSONArray jsArr = new JSONArray(jsonStr);
           for (int i = 0 ; i < jsArr.length() ; i++)
@@ -199,6 +193,13 @@ public class StuCampusDynamics extends BaseActivity implements XListView.IXListV
 
 
         mListView.setAdapter(new ItemListAdapter());
+        }catch (Exception e){
+            AlertDialog.Builder builder  = new AlertDialog.Builder(StuCampusDynamics.this);
+            builder.setTitle("提示" ) ;
+            builder.setMessage("暂时无动态！" ) ;
+            builder.setPositiveButton("确定" ,  null );
+            builder.show();
+        }
      }
 
     class ItemListAdapter extends BaseAdapter{

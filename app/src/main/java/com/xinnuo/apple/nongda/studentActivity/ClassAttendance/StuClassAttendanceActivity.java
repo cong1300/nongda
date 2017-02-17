@@ -385,21 +385,29 @@ public class StuClassAttendanceActivity extends BaseActivity {
                     Longitude = loc.getLongitude();
                     Latitude = loc.getLatitude();
                     distance = DistanceOfTwoPoints(Latitude,Longitude,signLatitude,signLongitude);
-                    final String coutent = "教师已上传定位坐标，可以定位签到了";
-                    if (distance > 50)
-                    {
+                    if (Longitude == 0.0){
                         AlertDialog.Builder builder  = new AlertDialog.Builder(StuClassAttendanceActivity.this);
                         builder.setTitle("提示" ) ;
-                        builder.setMessage("不在签到范围！" ) ;
+                        builder.setMessage("开启定位失败！" ) ;
                         builder.setPositiveButton("确定" ,  null );
                         builder.show();
-                        stopLocation();
-                        Longitude = 0.0;
-                        Latitude = 0.0;
-                    }else
-                    {
-                        locationSignIn(state, "sssss", "Zero");
+                    }else {
+                        if (distance > 50)
+                        {
+                            AlertDialog.Builder builder  = new AlertDialog.Builder(StuClassAttendanceActivity.this);
+                            builder.setTitle("提示" ) ;
+                            builder.setMessage("不在签到范围！" ) ;
+                            builder.setPositiveButton("确定" ,  null );
+                            builder.show();
+                            stopLocation();
+                            Longitude = 0.0;
+                            Latitude = 0.0;
+                        }else
+                        {
+                            locationSignIn(state, "sssss", "Zero");
+                        }
                     }
+
                 }
                 String ret = ""+Longitude + Latitude;
                 String jStr = Longitude+",";

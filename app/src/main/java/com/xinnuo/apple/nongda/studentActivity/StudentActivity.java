@@ -18,7 +18,9 @@ import com.xinnuo.apple.nongda.studentActivity.AccountSettings.StuAccountSetting
 import com.xinnuo.apple.nongda.studentActivity.CampusDynamics.StuCampusDynamics;
 import com.xinnuo.apple.nongda.studentActivity.ClassAttendance.StuClassAttendanceActivity;
 import com.xinnuo.apple.nongda.studentActivity.News.StuNews;
+import com.xinnuo.apple.nongda.studentActivity.OnlineTest.OnlineTestActivity;
 import com.xinnuo.apple.nongda.studentActivity.OutDoorSports.OutDoorSportsActivity;
+import com.xinnuo.apple.nongda.studentActivity.QRcode.QRcodeActivity;
 import com.xinnuo.apple.nongda.studentActivity.StuClub.StuClubActivity;
 import com.xinnuo.apple.nongda.studentActivity.StudentResultQuery.StudentResultQueryActivity;
 import com.xinnuo.apple.nongda.studentActivity.TeacherEvaluation.TeacherEvaluationActivity;
@@ -52,12 +54,12 @@ public class StudentActivity extends AppCompatActivity {
     private TextView student_setup;
     private TextView student_outdoors;
     private TextView stu_spase;
-    private TextView stu_spase1;
+    private TextView stu_spase1,student_QRcode;
 
     private String studentNo;
     private String name;
     private String id;
-    private String password;
+    private String password,gradeId;
     private OkHttpClient client;
     private String spDate;
     private final static String FILE_NAME = "xth.txt"; // 设置文件的名称
@@ -72,6 +74,7 @@ public class StudentActivity extends AppCompatActivity {
         studentNo = intent.getStringExtra("studentNo");
         id = intent.getStringExtra("studentId");
         password = intent.getStringExtra("password");
+        gradeId = intent.getStringExtra("gradeId");
         student_name.setText(name);
         account_number.setText(studentNo);
         clickJump();
@@ -103,6 +106,7 @@ public class StudentActivity extends AppCompatActivity {
         student_outdoors = (TextView) findViewById(R.id.student_outdoors);
         stu_spase = (TextView) findViewById(R.id.stu_spase);
         stu_spase1 = (TextView) findViewById(R.id.stu_spase1);
+        student_QRcode = (TextView) findViewById(R.id.student_QRcode);
     }
     /**
      * 点击事件进行相应的跳转
@@ -141,7 +145,12 @@ public class StudentActivity extends AppCompatActivity {
         student_OnlineTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(StudentActivity.this,OnlineTestActivity.class);
+                intent.putExtra("studentNo",studentNo);
+                intent.putExtra("password",password);
+                intent.putExtra("id",id);
+                intent.putExtra("name",name);
+                startActivity(intent);
             }
         });
         //上课签到
@@ -210,6 +219,19 @@ public class StudentActivity extends AppCompatActivity {
                  startActivity(intent);
             }
         });
+        //二维码
+        student_QRcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StudentActivity.this,QRcodeActivity.class);
+                intent.putExtra("studentId",id);
+                intent.putExtra("gradeId",gradeId);
+                intent.putExtra("name",name);
+                intent.putExtra("studentNo",studentNo);
+                Log.d("**************",id+"****"+gradeId+"*****"+name+"*****"+studentNo);
+                startActivity(intent);
+            }
+        });
     }
     //查询是否是最新消息
     private void findNewMsg(){
@@ -264,7 +286,6 @@ public class StudentActivity extends AppCompatActivity {
                                 stu_spase1.setVisibility(View.VISIBLE);
                             }
                         } catch (JSONException e) {
-                            e.printStackTrace();
                             //statuTV.setText("签到异常");
                         }
                     }

@@ -40,6 +40,8 @@ public class Student_Singin extends BaseActivity {
             intent.putExtra("studentName",studentInfo.getName());
             intent.putExtra("className",studentInfo.getClassName());
             intent.putExtra("password",studentInfo.getPassword());
+            Integer gId = studentInfo.getGradeId();
+            intent.putExtra("gradeId",gId.toString());
             // Log.d("~~~~~mainclassId = ", studentInfo.getClassId()+"\n"+studentInfo.getStudentNo()+"\n"+studentInfo.getName()+"\n"+studentInfo.getClassName());
         } catch (JSONException e) {
             e.printStackTrace();

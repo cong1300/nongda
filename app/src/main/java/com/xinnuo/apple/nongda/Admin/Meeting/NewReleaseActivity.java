@@ -79,6 +79,8 @@ public class NewReleaseActivity extends BaseActivity implements View.OnClickList
             Log.d("==============",invitationTeachers+"****************");
             oject.setText("从名单选择");
         }else{
+            invitationState = "1";
+            invitationTeachers = "0";
             oject.setText("学校全体教师");
         }
         if (intent.getStringExtra("teacherId") != null){
@@ -298,6 +300,7 @@ public class NewReleaseActivity extends BaseActivity implements View.OnClickList
                                         Intent intent = new Intent(NewReleaseActivity.this,AdministrationActivity.class);
                                         intent.putExtra("teacherId",teacherId);
                                         startActivity(intent);
+                                        finish();
                                     }
                                 } );
                                 builder.show();

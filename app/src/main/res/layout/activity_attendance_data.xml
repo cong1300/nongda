@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:id="@+id/tea_number"
+            android:id="@+id/tea_numbers"
             android:gravity="center"
             android:textColor="@color/contents_text"
             android:textAlignment="textStart"

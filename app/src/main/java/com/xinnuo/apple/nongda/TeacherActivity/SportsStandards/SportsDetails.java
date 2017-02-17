@@ -49,15 +49,31 @@ public class SportsDetails extends BaseActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long is) {
                 try {
                     //点击相应的班级进行跳转
-                    Intent intent=new Intent(SportsDetails.this,Sport_Class.class);
+
                     JSONObject js = dataArr.getJSONObject(position);
-                    //传值 班级id 所教班级id
-                    intent.putExtra("id",id);
-                    intent.putExtra("sportkindSex",js.getString("sportkindSex"));
-                    intent.putExtra("sportkindName",js.getString("sportkindName"));
-                    String status = position+1+"";
-                    intent.putExtra("status",status);
-                    startActivity(intent);
+                    if (js.getString("sportkindName").equals("50米跑(秒)") || js.getString("sportkindName").equals("1000米跑") || js.getString("sportkindName").equals("800米跑") )
+                    {
+                        //传值 班级id 所教班级id
+                        Intent intent=new Intent(SportsDetails.this,RunActivity.class);
+                        intent.putExtra("id",id);
+                        intent.putExtra("sportkindSex",js.getString("sportkindSex"));
+                        intent.putExtra("sportkindName",js.getString("sportkindName"));
+                        intent.putExtra("state","1");
+                        String status = position+1+"";
+                        intent.putExtra("status",status);
+                        startActivity(intent);
+                    }else{
+                        //传值 班级id 所教班级id
+                        Intent intent=new Intent(SportsDetails.this,Sport_Class.class);
+                        intent.putExtra("id",id);
+                        intent.putExtra("sportkindSex",js.getString("sportkindSex"));
+                        intent.putExtra("sportkindName",js.getString("sportkindName"));
+                        intent.putExtra("state","2");
+                        String status = position+1+"";
+                        intent.putExtra("status",status);
+                        startActivity(intent);
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

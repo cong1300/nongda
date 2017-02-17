@@ -57,6 +57,7 @@ public class Class_ListActivity extends BaseActivity {
                 intent1.putExtra("teacherId",teacherId);
                 intent1.putExtra("itemId",itemId);
                 startActivity(intent1);
+                finish();
             }
         });
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -72,7 +73,7 @@ public class Class_ListActivity extends BaseActivity {
                         intent.putExtra("teacherId",js.getString("id"));
                         intent.putExtra("itemId",itemId);
                         startActivity(intent);
-
+                        finish();
 
                 } catch (JSONException e) {
                     e.printStackTrace();

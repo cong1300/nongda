@@ -13,12 +13,13 @@ android {
         ndk {
             //选择要添加的对应cpu类型的.so库（不需要的删除即可）。
             abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+
         }
 
         manifestPlaceholders = [
-                JPUSH_PKGNAME: applicationId,
-                JPUSH_APPKEY : "b87d22d268cfef37903ac95a", //JPush上注册的包名对应的appkey（*换成你的*）
-                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "eeff2b83850b9c680a6610f3", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
         ]
     }
     buildTypes {
@@ -37,9 +38,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
-    compile 'cn.jiguang:jpush:2.2.0'
     // 此处以SDK 2.1.8版本为例
     compile files('libs/AMap_Location_V3.0.0_20160922.jar')
     compile files('libs/universal-image-loader-1.9.3.jar')
     compile files('libs/GifView.jar')
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile 'cn.jiguang.sdk:jpush:3.0.1'  // 此处以JPush 3.0.0 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.0.0'  // 此处以JCore 1.0.0 版本为例。
 }

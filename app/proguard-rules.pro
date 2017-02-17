@@ -19,7 +19,8 @@
 -dontpreverify
 
 -dontwarn cn.jpush.**
--keep class cn.jpus
+-keep class cn.jpush
+
 
 -keep class com.amap.api.location.**{*;}
 -keep class com.amap.api.fence.**{*;}

@@ -71,7 +71,7 @@ public class QueryAllTheeachersActivity extends BaseActivity {
                                             Intent intent=new Intent(QueryAllTheeachersActivity.this,TeacherSubstituteAddActivity.class);
                                             JSONObject js = null;
                                             try {
-                                                js = dataArr.getJSONObject(positions);
+                                                js = dataArr.getJSONObject(positions-1);
                                                 //传值 班级id 所教班级id
                                                 intent.putExtra("subTeacherId",js.getString("teacherId"));
                                                 intent.putExtra("teacherId",teacherId);
